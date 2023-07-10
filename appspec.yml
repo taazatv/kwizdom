@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /.
-    destination: /home/bitnami/htdocs
+    destination: /opt/bitnami/apache/Kwizdom/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
