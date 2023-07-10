@@ -1,6 +1,0 @@
-#!/bin/bash
-isExistApp = `pgrep apache`
-if [[ -n  $isExistApp ]]; then
-    sudo /opt/bitnami/ctlscript.sh stop apache        
-fi
-
