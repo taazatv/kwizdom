@@ -1,0 +1,185 @@
+.forgot-box{
+    background-image: url("/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.forgot{
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.forgot > div:nth-child(1){
+    margin: auto;
+}
+
+.forgot > div:nth-child(1) img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: -50px;
+    margin-top: -50px;
+}
+
+.forgot form{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.8);
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forgot form h1{
+    font-size: 2.5rem;
+}
+
+.forgot form div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.forgot form div label{
+    font-size: var(--secondary-font);
+    font-weight: 500;
+}
+
+.forgot form div input{
+    height: 30px;
+    padding-inline: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.6);
+    background-color: var(--input-bg-color);
+}
+
+.forgot form button{
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.social-links-fg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-box > div:nth-child(2){
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.forgot-box > div:nth-child(2) img{
+    width: 30%;
+    height: 100%;
+}
+
+.social-visible{
+    display: none;
+}
+
+@media(max-width:400px){
+    .forgot{
+        width: 85%;
+    }
+
+    .forgot > div:nth-child(1){
+        width: 80%;
+        margin-bottom: 60px;
+    }
+
+    .forgot-box{
+        height: auto;
+    }
+
+    .forgot-box > div:nth-child(2){
+        width: 85%;
+        height: 60%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .forgot-box > div:nth-child(2) img{
+        height: 100%;
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .social-visible{
+        display: block;
+    }
+    .social-links-fg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-links-fg img{
+        width: 30px;
+        height: 30px;
+    }
+    .forgot > div:nth-child(1) img{
+        margin-bottom: -70px;
+        margin-top: 10px;
+    }
+}
+
+
+@media((min-width:400px) and (max-width:768px)){
+    .forgot{
+        width: 70%;
+    }
+
+    .forgot > div:nth-child(1){
+        width: 65%;
+        margin-bottom: 60px;
+    }
+
+    .forgot-box{
+        height: auto;
+    }
+
+    .forgot-box > div:nth-child(2){
+        width: 85%;
+        height: 60%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .forgot-box > div:nth-child(2) img{
+        height: 80%;
+        width: 80%;
+        margin-left: 70px;
+    }
+
+    .social-visible{
+        display: block;
+    }
+    .social-links-fg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-links-fg img{
+        width: 40px;
+        height: 40px;
+    }
+    .forgot > div:nth-child(1) img{
+        margin-bottom: -70px;
+        margin-top: 30px;
+    }
+}

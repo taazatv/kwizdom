@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto:wght@400;500;700&display=swap');
+*{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+:root{
+  --primary-font:1.6rem;
+  --secondary-font:1.4rem;
+  --tertiary-font:1.2rem;
+  --color-white:#fff;
+  --header-bg-color:rgba(0, 0, 255, 0.543);
+  --input-bg-color:rgba(75, 141, 75, 0.256);
+  --button-bg-color:#23407C;
+  --button-bg-color-2:#EF982E;
+  --button-bg-color-3:#4EAE4D;
+  --bar-line-1-bg-color:#EF982E;
+  --bar-line-2-bg-color:rgb(42, 42, 96);
+  --h1-color:#254C8E;
+}
+
+@media(max-width:640px){
+  html{
+      font-size: 50%;
+    }
+}
