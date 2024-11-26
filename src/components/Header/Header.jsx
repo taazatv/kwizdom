@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-import { FiMenu, FiSearch } from "../../icons.js";
+
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -18,11 +18,11 @@ const Header = () => {
             <p>Contact Us</p>
 
             <div>
-              <FiMenu />
+              <i class="bi bi-list"></i>
             </div>
 
             <div>
-              <FiSearch />
+            <i class="bi bi-search"></i>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@ const Header = () => {
 
         <div className="mobile-header">
           <div>
-            <FiMenu />
+          <i class="bi bi-list"></i>
           </div>
         </div>
       </main>

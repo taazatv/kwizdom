@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./SearchResult.css";
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "../../icons";
+
 import { Combobox } from "@headlessui/react";
 import { useNavigate,Link } from "react-router-dom";
 import { MyContext } from "../../store";
@@ -166,16 +166,16 @@ const SearchResult = () => {
           <div>
             <p>Follow Us on</p>
             <span>
-              <FaFacebook />
+            <i class="bi bi-facebook"></i>
             </span>
             <span>
-              <FaTwitter />
+            <i class="bi bi-twitter-x"></i>
             </span>
             <span>
-              <FaInstagram />
+            <i class="bi bi-instagram"></i>
             </span>
             <span>
-              <FaYoutube />
+            <i class="bi bi-youtube"></i>
             </span>
             <p>Taaza Tv</p>
             <p>To Watch Taaza Tv live download the mobile App</p>
