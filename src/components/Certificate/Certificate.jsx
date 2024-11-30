@@ -36,7 +36,7 @@ const Certificate = () => {
     });
   };
 
-  const id = studentData[0]._id
+  const id = studentData._id
 
   return (
     <>
