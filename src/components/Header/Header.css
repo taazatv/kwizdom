@@ -26,6 +26,11 @@
     cursor: pointer;
 }
 
+.header a {
+    color:white;
+}
+
+
 .mobile-header{
     display: none;
 }

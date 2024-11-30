@@ -12,18 +12,21 @@ const Header = () => {
           <Link to="/search" style={{textDecoration:"none",color:"var(--color-white)"}}><h1>KWiZDoM</h1></Link>
 
           <div>
-            <p>Home</p>
-            <p>About Kwizdom</p>
-            <p>About GRSE</p>
-            <p>Contact Us</p>
+            <p><Link to="/">Home</Link></p>
+            <p><Link to="/about">About Kwizdom</Link></p>
+               
 
-            <div>
+
+            {/* <p>About GRSE</p>  */}
+            <p><a href="https://taazatv.com/contact.php"> Contact Us</a></p>
+
+            {/* <div>
               <i class="bi bi-list"></i>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
             <i class="bi bi-search"></i>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -31,7 +34,7 @@ const Header = () => {
 
         <div className="mobile-header">
           <div>
-          <i class="bi bi-list"></i>
+          <i className="bi bi-list"></i>
           </div>
         </div>
       </main>

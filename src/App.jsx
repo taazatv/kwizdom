@@ -8,6 +8,7 @@ import Certificate from "./components/Certificate/Certificate";
 import Login from "./components/Login/Login";
 import Dashboard from "./components/Admin/Dashboard/Dashboard";
 import Coming from "./components/Coming/Coming";
+import About from "./components/About/About";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
 
           <Route path="/signin" element={<Login/>}/>
           <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/about" element={<About/>} />
         </Routes>
       </BrowserRouter>
     </>
