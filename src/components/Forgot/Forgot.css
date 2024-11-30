@@ -19,8 +19,8 @@
 .forgot > div:nth-child(1) img{
     height: 100%;
     width: 100%;
-    margin-bottom: -50px;
-    margin-top: -50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .forgot form{
@@ -48,7 +48,7 @@
     font-weight: 500;
 }
 
-.forgot form div input{
+.forgot form div input, .combo-input{
     height: 30px;
     padding-inline: 10px;
     width: 100%;
@@ -83,8 +83,10 @@
 }
 
 .forgot-box > div:nth-child(2) img{
-    width: 30%;
-    height: 100%;
+    width: auto;
+    height: 500px;
+    position: fixed;
+    bottom: 10rem;
 }
 
 .social-visible{

@@ -68,7 +68,7 @@ const SearchResult = () => {
             <form className="form">
               {/* <input type="text" placeholder="School Name" /> */}
 
-              <Combobox value={SchoolName} onChange={setSchoolName}>
+              <Combobox  value={SchoolName} onChange={setSchoolName}>
                 <Combobox.Input
                   onChange={(event) => setQuery(event.target.value)}
                   className="combo-input"
@@ -111,14 +111,17 @@ const SearchResult = () => {
               <Link
                 to="/forgot"
                 style={{ color: "black", textDecoration: "none" }}
+                className="redbutton"
               >
-                <p>Forgot mobile Number ?</p>
+                <p>Cant find your name ?</p>
               </Link>
 
               <div>
-                <img src="/herologo2.png" alt="" />
+                <img src="/herologo2.png" alt="" style={{width: "16rem", height: "auto", transform: "translateX(-20px)"}}/>
+
               </div>
             </form>
+
           </div>
 
           <div className="right">
