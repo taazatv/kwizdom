@@ -32,7 +32,7 @@ const Login = () => {
       setError("Password is required")
     }else{
       try {
-        const { data } = await axios.post("http://localhost:8000/admin/signin", {
+        const { data } = await axios.post("https://kwizdom2-0-backend.onrender.com/admin/signin", {
           email,
           password,
         });

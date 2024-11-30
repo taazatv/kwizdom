@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const getStudents = async () => {
-        const { data } = await axios.get("http://localhost:8000/api");
+        const { data } = await axios.get("https://kwizdom2-0-backend.onrender.com/api");
         setAllStudents(data);
       };
 
@@ -17,7 +17,7 @@ const Dashboard = () => {
   }, []);
 
   const getRequestChange = async(id) => {
-    const {data} = await axios.put(`http://localhost:8000/admin/${id}`)
+    const {data} = await axios.put(`https://kwizdom2-0-backend.onrender.com/admin/${id}`)
     setAllStudents(data)
   }
 

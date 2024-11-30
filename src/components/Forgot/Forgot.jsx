@@ -26,7 +26,7 @@ const Forgot = () => {
   const SearchHandler = async(e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post("http://localhost:8000/api/forgot/new", {
+      const { data } = await axios.post("https://kwizdom2-0-backend.onrender.com/api/forgot/new", {
         StudentName,
         DOB
       });

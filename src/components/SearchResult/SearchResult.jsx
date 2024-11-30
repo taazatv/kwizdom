@@ -44,7 +44,7 @@ const SearchResult = () => {
   const submitHandler = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post("http://localhost:8000/api/search", {
+      const { data } = await axios.post("https://kwizdom2-0-backend.onrender.com/api/search", {
         SchoolName,
         PhoneNumber,
       });

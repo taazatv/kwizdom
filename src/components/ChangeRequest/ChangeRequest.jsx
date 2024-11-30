@@ -47,7 +47,7 @@ const ChangeRequest = () => {
     setMessage("Request has been sent...")
 
     // Clear the message after 3 seconds (3000 milliseconds)
-    const {data} = await axios.put(`http://localhost:8000/api/${id}/new`,{requestedName,requestedSchoolName})
+    const {data} = await axios.put(`https://kwizdom2-0-backend.onrender.com/api/${id}/new`,{requestedName,requestedSchoolName})
     setNewData(data)
     setTimeout(() => {
         setMessage('');
