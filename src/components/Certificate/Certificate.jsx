@@ -44,15 +44,13 @@ const Certificate = () => {
         <div className="certify">
           <h1>Welcome Student</h1>
           {studentData &&
-            studentData.length > 0 ?
-            studentData.map((student) => {
-              return (
-                <div key={student._id}>
-                  <p>Student Name: &nbsp;{student.StudentName}</p>
-                  <p>School Name: &nbsp;{student.SchoolName}</p>
+             (
+                <div key={studentData._id}>
+                  <p>Student Name: &nbsp;{studentData.StudentName}</p>
+                  <p>School Name: &nbsp;{studentData.SchoolName}</p>
                 </div>
-              );
-            }) : <p>NO Data</p>}
+              )
+            } 
 
           <div>
             <Link to={`/request/${id}`} style={{textDecoration:"none",color:"black"}}><button>Change Request</button></Link>
@@ -60,7 +58,7 @@ const Certificate = () => {
           </div>
 
           <div className="image" ref={pdfRef}>
-            <h1>{studentData[0] && studentData[0].StudentName ? studentData[0].StudentName : ""}</h1>
+            <h1>{studentData && studentData.StudentName ? studentData.StudentName : ""}</h1>
           </div>
 
           <div className="social-visible">
