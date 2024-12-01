@@ -58,10 +58,12 @@
 
 .hero-logo img{
     object-fit: contain;
-    height: 200%;
-    width: 200%;
+    height: auto;
+    width: 300px;
     max-width: 1200px;
+    margin-left: -4rem;
 }
+
 
 .form{
     width: 70%;
@@ -364,10 +366,11 @@ input[type="number"]::-webkit-outer-spin-button {
         display: none;
     }
     .hero-img{
-        width: 100%;
-        height: 80%;
-        margin-bottom: 100px;
+        width: 350px;
+        height: auto;
+        margin-bottom: -15rem;
         position: relative;
+    
     }
 
     .lower-div2{
@@ -392,6 +395,7 @@ input[type="number"]::-webkit-outer-spin-button {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: -29rem;
     }
 
     .social-links img{
@@ -409,6 +413,9 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     .left > p:nth-child(2){
         width: 60%;
+        margin-top: 10rem;
+        font-weight: 900;
+        margin-bottom: -2rem;
     }
 
     .hero-logo {
@@ -418,6 +425,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .form > div:nth-child(5) img {
         width: 100px;
+        position: fixed;
+        top: 7rem;
+        right: -4rem;
     }
     .combo{
         top: 285px;
