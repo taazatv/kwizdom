@@ -1,7 +1,7 @@
 import React from "react"
 export default function About(){
     return<>
-        <p>Taaza TV has officially started its flagship quiz competition, "KWIZDOM 2.0," aimed at fostering academic excellence and national pride among students in Kolkata. This unique initiative invites students from grades 6, 7, and 8 from the city’s top 100 schools to participate in a journey celebrating India’s glorious history, general knowledge, and current affairs.
+        <p style ={{padding: "2rem",fontSize:"2rem"}}>Taaza TV has officially started its flagship quiz competition, "KWIZDOM 2.0," aimed at fostering academic excellence and national pride among students in Kolkata. This unique initiative invites students from grades 6, 7, and 8 from the city’s top 100 schools to participate in a journey celebrating India’s glorious history, general knowledge, and current affairs.
 
 The competition begins with preliminary rounds conducted within school campuses. Students will face a 30-minute challenge, answering multiple-choice questions (MCQs) on topics like India’s history, culture, and current events. These rounds will be held either in classrooms or auditoriums, with answers recorded on OMR sheets for accuracy and fairness.
 
