@@ -60,7 +60,7 @@ const ChangeRequest = () => {
    return (
     <main className="request_box">
       <div className="request">
-        <div><img src="/logo1.png" alt="" /></div>
+        <div><img src="/herologo.png" alt="" /></div>
 
         <form>
         <h1>Edit</h1>
