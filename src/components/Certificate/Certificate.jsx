@@ -42,64 +42,18 @@ const Certificate = () => {
 
 
     <>
-
-    <main className ="container">
-    <h1>Welcome Student</h1>
-    <div className="Flex"> 
-    <div className="left"> </div>
-
-    {studentData &&
-             (
-                <div key={studentData._id}>
-                  <p>Student Name: &nbsp;{studentData.StudentName}</p>
-                  <p>School Name: &nbsp;{studentData.SchoolName}</p>
-                </div>
-              )
-            } 
-
-
-
-     <div className= "right">
-     <div>
-            <Link to={`/request/${id}`} style={{textDecoration:"none",color:"black"}}><button>Change Request</button></Link>
-            <button onClick={downloadPDF}>Download Result</button>
-          </div>
-
-          <div className="image" ref={pdfRef}>
-            <h1>{studentData && studentData.StudentName ? studentData.StudentName : ""}</h1>
-          </div>
-
-          <div className="social-visible">
-            <div className="social-links-certify">
-              <div>
-                <img src="/wa.png" alt="" />
-              </div>
-              <div>
-                <img src="/insta.png" alt="" />
-              </div>
-              <div>
-                <img src="/fb.png" alt="" />
-              </div>
-              <div>
-                <img src="/yt.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-     </div>
-
-     
-    
-      
-    </main>
-      {/* <main className="certify-box">
+       <main className="certify-box">
         <div className="certify">
           <h1>Welcome Student</h1>
+          <img src="herologo.png" width="500"></img>
           {studentData &&
              (
-                <div key={studentData._id}>
+                <div className = "details" key={studentData._id}>
+
                   <p>Student Name: &nbsp;{studentData.StudentName}</p>
                   <p>School Name: &nbsp;{studentData.SchoolName}</p>
+                  <p>Grade: &nbsp;{studentData.Grade}</p>
+                 
                 </div>
               )
             } 
@@ -109,8 +63,12 @@ const Certificate = () => {
             <button onClick={downloadPDF}>Download Result</button>
           </div>
 
+          <p style={{fontSize: "2rem", fontWeight:900}}>Grade Table : </p>
+          <img src= "/grade.png " style={{ marginLeft: "-4rem"}}></img>
+           
           <div className="image" ref={pdfRef}>
             <h1>{studentData && studentData.StudentName ? studentData.StudentName : ""}</h1>
+            <h1 style={{transform: "translateY(30px) translateX(-45px)"}}>{studentData && studentData.SchoolName ? studentData.SchoolName : ""}</h1>
           </div>
 
           <div className="social-visible">
@@ -130,7 +88,7 @@ const Certificate = () => {
             </div>
           </div>
         </div>
-      </main>*/}
+      </main>
     </> 
   );
 };
