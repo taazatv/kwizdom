@@ -80,7 +80,7 @@ const Forgot = () => {
           <h1>Enter all the necessary info and Get your result.</h1>
 
 
-          <Combobox  className = "input-2" value={SchoolName} onChange={setSchoolName}>
+          <Combobox  value={SchoolName} onChange={setSchoolName}>
                 <Combobox.Input
                   onChange={(event) => setQuery(event.target.value)}
                   className="combo-input"

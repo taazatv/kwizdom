@@ -49,11 +49,13 @@ const SearchResult = () => {
         PhoneNumber,
       });
       setStudentData(data);
-
+      if(data._id != undefined)
       navigate("/certificate");
-    } catch (error) {}
+    } catch (error) {console.log(error)}
   };
 
+
+  
   return (
     <>
       <main className="search-result-container">
@@ -103,7 +105,7 @@ const SearchResult = () => {
               type="number" 
               placeholder="Mobile Number" 
               value={PhoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              onChange={(e) => setPhoneNumber(Number(e.target.value.toString().substring(0,10) )|| "" )}
               />
 
               <button onClick={submitHandler}>Get your Result</button>

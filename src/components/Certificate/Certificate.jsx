@@ -39,8 +39,60 @@ const Certificate = () => {
   const id = studentData._id
 
   return (
+
+
     <>
-      <main className="certify-box">
+
+    <main className ="container">
+    <h1>Welcome Student</h1>
+    <div className="Flex"> 
+    <div className="left"> </div>
+
+    {studentData &&
+             (
+                <div key={studentData._id}>
+                  <p>Student Name: &nbsp;{studentData.StudentName}</p>
+                  <p>School Name: &nbsp;{studentData.SchoolName}</p>
+                </div>
+              )
+            } 
+
+
+
+     <div className= "right">
+     <div>
+            <Link to={`/request/${id}`} style={{textDecoration:"none",color:"black"}}><button>Change Request</button></Link>
+            <button onClick={downloadPDF}>Download Result</button>
+          </div>
+
+          <div className="image" ref={pdfRef}>
+            <h1>{studentData && studentData.StudentName ? studentData.StudentName : ""}</h1>
+          </div>
+
+          <div className="social-visible">
+            <div className="social-links-certify">
+              <div>
+                <img src="/wa.png" alt="" />
+              </div>
+              <div>
+                <img src="/insta.png" alt="" />
+              </div>
+              <div>
+                <img src="/fb.png" alt="" />
+              </div>
+              <div>
+                <img src="/yt.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+
+     
+    
+      
+    </main>
+      {/* <main className="certify-box">
         <div className="certify">
           <h1>Welcome Student</h1>
           {studentData &&
@@ -78,8 +130,8 @@ const Certificate = () => {
             </div>
           </div>
         </div>
-      </main>
-    </>
+      </main>*/}
+    </> 
   );
 };
 

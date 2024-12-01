@@ -1,4 +1,23 @@
-.certify-box{
+.container{
+    display:flex;
+    flex-direction:column;
+    width:100vw;
+    align-items: center;
+}
+
+.Flex{
+    display:flex;
+    width:100vw;
+    align-items: center;
+}
+
+.left,.right{
+    width:50vw;
+}
+
+
+
+ .certify-box{
     background-image: url("/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -69,14 +88,14 @@
 .social-visible{
     display: none !important;
 }
-/* .social-links-certify{
+ .social-links-certify{
     display: flex;
     flex-direction: row !important;
     align-items: center;
     justify-content: center;
-} */
+} 
 
-.text{
+ .text{
     visibility: hidden;
 }
 
@@ -139,4 +158,4 @@
         align-items: center;
         justify-content: center;
     }
-}
+} 
