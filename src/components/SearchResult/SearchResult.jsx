@@ -203,10 +203,6 @@ const SearchResult = () => {
           also on JIO TV / Daily Hunt.
         </p>
       </div>
-
-      <div className="lower-div2">
-        <img src="/sponsors.png" alt="" />
-      </div>
     </>
   );
 };

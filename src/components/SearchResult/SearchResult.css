@@ -1,4 +1,6 @@
-#root{overflow-y:hidden};
+#root{
+    height: 100dvh;
+    overflow-y:hidden};
 
 
 
@@ -299,7 +301,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none;
 }
 
-@media(max-width:400px){
+@media(max-width:300px){
     .search-result-container{
         height: auto;
     }
@@ -355,7 +357,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
-@media((min-width:400px) and (max-width:768px)){
+@media((min-width:300px) and (max-width:768px)){
     .search-result-container{
         height: auto;
     }
