@@ -1,3 +1,9 @@
+#root{
+    overflow-y:scroll;
+
+}
+
+
 .dashboard-box{
     background-image: url("/bg.png");
     background-size: cover;

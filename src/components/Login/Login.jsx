@@ -52,7 +52,7 @@ const Login = () => {
     <>
      <main className='login-box'>
      <div>
-          <img src="/logo1.png" alt="" />
+          <img src="/herologo.png" alt="" />
         </div>
 
 

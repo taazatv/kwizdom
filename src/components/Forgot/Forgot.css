@@ -93,7 +93,7 @@
     display: none;
 }
 
-@media(max-width:400px){
+@media(max-width:300px){
     .forgot{
         width: 85%;
     }
@@ -139,9 +139,12 @@
 
     }
 }
+  @media(max-width:400px) {
+    .forgot-box >div:nth-child(2) img{display: none !important}
+  }
 
 
-@media((min-width:400px) and (max-width:768px)){
+@media((min-width:300px) and (max-width:768px)){
     .forgot{
         width: 70%;
     }

@@ -14,8 +14,8 @@
 .login-box > div:nth-child(1) img{
     height: 100%;
     width: 100%;
-    margin-bottom: -70px;
-    margin-top: -50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .login{
