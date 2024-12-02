@@ -16,7 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Coming/>}/>
+          <Route path="/" element={<SearchResult/>}/>
           <Route path="/search" element={<SearchResult />} />
           <Route path="/forgot" element={<Forgot/>}/>
           <Route path="/request/:id" element={<ChangeRequest/>}/>

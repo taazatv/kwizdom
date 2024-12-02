@@ -45,7 +45,6 @@ const Certificate = () => {
        <main className="certify-box">
         <div className="certify">
           <h1>Welcome Student</h1>
-          <img src="herologo.png" width="500"></img>
           {studentData &&
              (
                 <div className = "details" key={studentData._id}>
@@ -64,29 +63,16 @@ const Certificate = () => {
           </div>
 
           <p style={{fontSize: "2rem", fontWeight:900}}>Grade Table : </p>
-          <img src= "/grade.png " style={{ marginLeft: "-4rem"}}></img>
-           
+          <img src= "/grade.png " style={{ marginLeft: "-4rem", marginBottom: "2rem"}}></img>
+          <br />
+          <img className= "herologo" src="herologo.png" width="500"></img>
+          
           <div className="image" ref={pdfRef}>
-            <h1>{studentData && studentData.StudentName ? studentData.StudentName : ""}</h1>
-            <h1 style={{transform: "translateY(30px) translateX(-45px)"}}>{studentData && studentData.SchoolName ? studentData.SchoolName : ""}</h1>
+            <h1>{studentData && studentData.StudentName ? studentData.StudentName : "Student Name"}</h1>
+           
+            <h1 style={{transform: "translateY(30px) translateX(-50%)"}}>{studentData && studentData.SchoolName ? studentData.SchoolName : "School Name"}</h1>
           </div>
 
-          <div className="social-visible">
-            <div className="social-links-certify">
-              <div>
-                <img src="/wa.png" alt="" />
-              </div>
-              <div>
-                <img src="/insta.png" alt="" />
-              </div>
-              <div>
-                <img src="/fb.png" alt="" />
-              </div>
-              <div>
-                <img src="/yt.png" alt="" />
-              </div>
-            </div>
-          </div>
         </div>
       </main>
     </> 

@@ -7,6 +7,7 @@ import { MyContext } from "../../store";
 import axios from "axios"
 
 const schoolNames = [
+  "ASIAN INTERNATIONAL SCHOOL",
   "KMPHS",
   "KMPHS High School",
   "KM High School",

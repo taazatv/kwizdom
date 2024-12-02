@@ -1,3 +1,8 @@
+#root {
+    overflow-y: hidden;
+    max-height: 100vh;
+} 
+ 
  .certify-box{
     background-image: url("/bg.png");
     background-size: cover;
@@ -16,13 +21,16 @@
     margin-bottom: 30px;
 }
 
-.certify > div:nth-child(3) p{
-    font-weight: bold;
-    font-size: var(--secondary-font);
-    margin-bottom: 5px;
+.certify .details {
+    width: 500px;
 }
 
-.certify > div:nth-child(4){
+.certify .details p {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.certify > div:nth-child(3){
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,7 +38,7 @@
     margin-bottom: 20px;
 }
 
-.certify > div:nth-child(4) button:nth-child(1){
+.certify > div:nth-child(3) button:nth-child(1){
     background-color: var(--button-bg-color-2);
     border-radius: 20px;
     padding: 5px 12px;
@@ -40,7 +48,7 @@
     font-weight: 500;
 }
 
-.certify > div:nth-child(4) button:nth-child(2){
+.certify > div:nth-child(3) button:nth-child(2){
     
     background-color:var(--button-bg-color-3);
     border-radius: 20px;
@@ -49,7 +57,7 @@
     cursor: pointer;
     color: var(--color-white);
     font: 500;
-    position:fixed;
+    position:absolute;
     top:20%;
     right: 30rem;
 
@@ -68,6 +76,7 @@
 }
 
 .certify .image h1{
+    width: 100%;
     top: 36vh;
     left: 50%;
     transform: translateX(-50%);
@@ -128,15 +137,21 @@
 
 @media((min-width:400px) and (max-width:768px)){
     .certify h1{
-        font-size: large;
+        font-size: 17px;
+        margin-top: -8px;
     }
+    
     .certify > p{
         font-size: medium;
     }
     .certify .image{
-        width: 100%;
-        height: 135vh;
-        margin-bottom: 0px;
+        width: auto;
+        height: 36vh;
+        position: absolute;
+        margin-left: 21rem;
+        transform: translateY(0vh);
+        top: 57vh;
+        left: -11rem;
     }
 
     .certify div{
@@ -145,6 +160,8 @@
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
+        width: 70vw !important;
+        /* margin-left: 10rem; */
     }
     .social-visible{
         display: block !important;
@@ -155,4 +172,37 @@
         align-items: center;
         justify-content: center;
     }
+    .herologo{
+        display: none;
+    }
+
+
+    .certify > div:nth-child(3) button:nth-child(2){
+    top: 55vh;
+    
+    left: 17rem;
+    right: auto;
+    }
+
+
+    .certify .image:nth-child(1) {
+        transform: translateY(-124px) translateX(-18px)!important;
+    }
+
+    .certify .image h1{
+        font-size: 10px;
+        position: absolute;
+        left: 15rem;
+        width: 205px;
+        top: 21.25vh;
+    }
+
+
+    .certify .image h1:nth-child(2) {
+        top: 20vh;
+    }
+    .certify > div:nth-child(4) button:nth-child(1){
+        margin-left: -9rem;
+    }
 } 
+
