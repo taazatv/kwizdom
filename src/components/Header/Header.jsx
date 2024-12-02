@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import "./Header.css";
 
@@ -32,11 +35,11 @@ const Header = () => {
 
         {/* Mobile Menu */}
 
-        <div className="mobile-header">
+        {/* <div className="mobile-header">
           <div>
-          <i className="bi bi-list"></i>
+         
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   );

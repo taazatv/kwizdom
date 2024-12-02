@@ -4,6 +4,7 @@
     width: 100%;
     color: white;
     font-size: var(--primary-font);
+    margin-bottom: -2rem;
 }
 .header{
     width: 85%;
@@ -34,7 +35,7 @@
 .mobile-header{
     display: none;
 }
-
+/* 
 @media(max-width:400px){
     .header{
         display: none;
@@ -83,4 +84,4 @@
         padding: 3px;
         border-radius: 4px;
     }
-}
+} */

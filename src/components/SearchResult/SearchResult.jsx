@@ -120,7 +120,7 @@ const SearchResult = () => {
               </Link>
 
               <div>
-                <img src="/herologo2.png" alt="" style={{width: "16rem", height: "auto", transform: "translateX(-20px)"}}/>
+                <img src="/herologo2.png" alt="" style={{width: "12rem", height: "auto", transform: "translateX(-20px)"}}/>
 
               </div>
             </form>
@@ -150,7 +150,7 @@ const SearchResult = () => {
             </div>
           </div>
 
-          <div className="social-links">
+          {/* <div className="social-links">
             <div>
               <img src="/wa.png" alt="" />
             </div>
@@ -163,7 +163,7 @@ const SearchResult = () => {
             <div>
               <img src="/yt.png" alt="" />
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
       <div className="bar-line" />

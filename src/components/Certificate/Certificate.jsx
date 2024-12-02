@@ -70,7 +70,11 @@ const Certificate = () => {
           <div className="image" ref={pdfRef}>
             <h1>{studentData && studentData.StudentName ? studentData.StudentName : "Student Name"}</h1>
            
+              
+
             <h1 style={{transform: "translateY(30px) translateX(-50%)"}}>{studentData && studentData.SchoolName ? studentData.SchoolName : "School Name"}</h1>
+
+            <img src= "/certificate.png" width={2400}   height= {1600} style={{width:"300px",height:"450px"}}></img>
           </div>
 
         </div>

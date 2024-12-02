@@ -42,8 +42,8 @@
 }
 
 .left{
-    padding-block: 30px;
-    height: 85vh;
+    padding-block: 20px;
+    height: 70vh !important;
 }
 
 .left > p:nth-child(2){
