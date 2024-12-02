@@ -58,7 +58,7 @@ const Certificate = () => {
             } 
 
           <div>
-            <Link to={`/request/${id}`} style={{textDecoration:"none",color:"black"}}><button>Change Request</button></Link>
+            <Link to={`/request/${id}`} style={{textDecoration:"none",color:"black"}}><button>Correction in spelling?</button></Link>
             <button onClick={downloadPDF}>Download Result</button>
           </div>
 
