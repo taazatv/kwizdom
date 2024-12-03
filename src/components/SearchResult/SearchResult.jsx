@@ -8,7 +8,7 @@ import axios from "axios"
 
 const schoolNames = [
   "ASIAN INTERNATIONAL SCHOOL",
-  
+  "ABHINAV  BHARTI"
 ];
 
 const SearchResult = () => {
