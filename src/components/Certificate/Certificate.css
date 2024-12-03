@@ -77,8 +77,8 @@
 
 .certify .image h1{
     width: 100%;
-    top: 36vh;
-    left: 50%;
+    top: 26vh;
+    left: 36%;
     transform: translateX(-50%);
     position: absolute;
     /* font-size: calc(var(--primary-font)*2); */
