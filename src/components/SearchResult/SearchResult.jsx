@@ -8,17 +8,7 @@ import axios from "axios"
 
 const schoolNames = [
   "ASIAN INTERNATIONAL SCHOOL",
-  "KMPHS",
-  "KMPHS High School",
-  "KM High School",
-  "KPA Model",
-  "KVS High School",
-  "Kanchrapara School",
-  "Kalyani High School",
-  "Halisahar high school",
-  "Kalyani Central Model",
-  "Kanchrapara New School",
-  "Naihati High School",
+  
 ];
 
 const SearchResult = () => {
