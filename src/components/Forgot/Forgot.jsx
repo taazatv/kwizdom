@@ -7,17 +7,8 @@ import { Combobox } from "@headlessui/react";
 
 
 const schoolNames = [
-  "KMPHS",
-  "KMPHS High School",
-  "KM High School",
-  "KPA Model",
-  "KVS High School",
-  "Kanchrapara School",
-  "Kalyani High School",
-  "Halisahar high school",
-  "Kalyani Central Model",
-  "Kanchrapara New School",
-  "Naihati High School",
+  "ASIAN INTERNATIONAL SCHOOL",
+  "ABHINAV  BHARTI"
 ];
 
 const Forgot = () => {
