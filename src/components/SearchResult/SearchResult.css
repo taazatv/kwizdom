@@ -173,14 +173,14 @@ form input::placeholder{
     height: 10px;
     width: 100%;
     position: absolute;
-    margin-top: 10px;
+    margin-top: 159px;
 }
 
 .bar-line-2{
     background-color:var(--bar-line-2-bg-color);
     height: 30px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 168px;
 }
 
 .bar-line-2 .inner-bar{
