@@ -99,6 +99,7 @@ const SearchResult = () => {
               onChange={(e) => setPhoneNumber(Number(e.target.value.toString().substring(0,10) )|| "" )}
               />
 
+              <p style={{color:"red",textAlign:"left",width:"100%" }}>{studentData.message && "*Wrong Number*"}</p>
               <button onClick={submitHandler}>Get your Result</button>
 
               <Link
