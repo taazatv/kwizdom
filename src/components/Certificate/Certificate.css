@@ -50,37 +50,37 @@
 
 .certify > div:nth-child(3) button:nth-child(2){
     
-    background-color:var(--button-bg-color-3);
+    background-color: var(--button-bg-color-3);
     border-radius: 20px;
-    padding: 5px 12px;
-    border:none;
+    padding: 9px 20px;
+    border: none;
     cursor: pointer;
     color: var(--color-white);
     font: 500;
-    position:absolute;
-    top:20%;
-    right: 30rem;
-
+    position: absolute;
+    top: 17%;
+    right: 20rem;
 }
 
 .certify .image{
-    width: auto;
-    height: 80vh;
+    width: 385px;
+    height: 545px;
     /* background-image: url(/certificate.png); */
     /* background-size:/ contain; */
     /* background-repeat: no-repeat; */
     position: fixed;
-    right: 16rem;
+    right: 8rem;
     top: 25%;
     aspect-ratio: 9 / 16;
 }
 
 .certify .image h1{
     width: 100%;
-    top: 26vh;
-    left: 36%;
-    transform: translateX(-50%);
+    top: 306px;
+    right: 10rem;
+    transform: translateX(10rem);
     position: absolute;
+    text-align: center;
     /* font-size: calc(var(--primary-font)*2); */
 }
 .social-visible{

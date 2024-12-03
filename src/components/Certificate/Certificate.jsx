@@ -14,16 +14,17 @@ const Certificate = () => {
 
   const downloadPDF = () => {
     const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
+    html2canvas(input, { scale: 3, useCORS: true }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4", true);
+      const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
       const imgWidth = canvas.width;
       const imgHeight = canvas.height;
       const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
       const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 0; // Updated value to remove space at the top
+      const imgY = 0;
+  
       pdf.addImage(
         imgData,
         "PNG",
@@ -35,6 +36,7 @@ const Certificate = () => {
       pdf.save("certificate.pdf");
     });
   };
+  
 
   const id = studentData._id
 
@@ -67,14 +69,14 @@ const Certificate = () => {
           <br />
           <img className= "herologo" src="herologo.png" width="500"></img>
           
-          <div className="image" ref={pdfRef}>
+          <div width={4800} height={3200} className ="image" ref={pdfRef}>
             <h1>{studentData && studentData.StudentName ? studentData.StudentName : "Student Name"}</h1>
            
               
 
-            <h1 style={{transform: "translateY(30px) translateX(-50%)"}}>{studentData && studentData.SchoolName ? studentData.SchoolName : "School Name"}</h1>
+            <h1 style={{transform: "translateY(30px) translateX(10rem)"}}>{studentData && studentData.SchoolName ? studentData.SchoolName : "School Name"}</h1>
 
-            <img src= "/certificate.png" width={2400}   height= {1600} style={{width:"300px",height:"450px"}}></img>
+            <img src= "/certificate.png" width= {4800}   height= {3200} style={{width:"385px",height:"545px"}}></img>
           </div>
 
         </div>
