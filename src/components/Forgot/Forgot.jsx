@@ -80,8 +80,8 @@ const Forgot = () => {
       : allStudents
           .filter((student) => student.SchoolName === SchoolName)
           .filter((student) =>
-            student.StudentName.toLowerCase().replace(/\s+/g, "").includes(
-              query2.toLowerCase().replace(/\s+/g, "")
+            student.StudentName.toLowerCase().includes(
+              query2.toLowerCase()
             )
           );
 

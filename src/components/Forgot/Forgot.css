@@ -194,4 +194,16 @@
         width: 300px;
         margin-left: -7rem;
     }
+    .combo {
+        top: 380px;
+        width: 60%;
+    }
+
+    *[id*="headlessui-combobox-options-:r3:"]{
+        top:420px;
+    }
+
+    
 }
+
+
