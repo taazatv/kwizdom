@@ -175,19 +175,21 @@ form input::placeholder{
 }
 
 .bar-line{
-    background-color:var(--bar-line-1-bg-color);
+    background-color: var(--bar-line-1-bg-color);
     height: 10px;
     width: 100%;
     position: absolute;
-    margin-top: 125px;
+    /* margin-top: 125px; */
+    bottom: 75px;
 }
 
 .bar-line-2{
-    background-color:var(--bar-line-2-bg-color);
+    background-color: var(--bar-line-2-bg-color);
     height: 30px;
     width: 100%;
-    margin-top: 134px;
-}
+    /* margin-top: 134px; */
+    position: absolute;
+    bottom: 50px;}
 
 .bar-line-2 .inner-bar{
     width: 60%;
@@ -243,16 +245,19 @@ form input::placeholder{
 }
 
 .bar-line-3{
-    background-color:#efefef;
-    height: calc(100vh - 85vh - 70px);
-    display: flex;
+    background-color: #efefef;
+    height: calc(15vh - 70px);
+    display: flex
+;
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    font-size: var( --tertiary-font);
-    margin-top: -20px;
+    font-size: var(--tertiary-font);
+    /* margin-top: -20px; */
     z-index: -5;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
 }
 
 .combo{
