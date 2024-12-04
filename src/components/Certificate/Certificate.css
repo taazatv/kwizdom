@@ -1,3 +1,25 @@
+@keyframes blink {
+    0%{
+        opacity:0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+
+}
+
+.blink{
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    color:blue;
+}
+
+
+
 #root {
     overflow-y: hidden;
     max-height: 100vh;
@@ -81,6 +103,7 @@
     transform: translateX(10rem);
     position: absolute;
     text-align: center;
+    font-style:italic;
     /* font-size: calc(var(--primary-font)*2); */
 }
 .social-visible{
@@ -104,6 +127,21 @@
     padding: 2rem;
     border-radius: 0.5rem;
 }
+
+#watermark{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 27rem;
+    width: 100vw;
+    text-align: center;
+    font-weight: 900;
+    opacity: 0.2;
+    pointer-events: none;
+
+}
+
 
 @media(max-width:300px){
     .certify h1{
@@ -239,7 +277,9 @@
         top:200px;
     }
 
-
+#watermark{
+    display: none;
+}
 
 } 
 

@@ -53,7 +53,7 @@ const Certificate = () => {
 
                   <p>Student Name: &nbsp;{studentData.StudentName}</p>
                   <p>School Name: &nbsp;{studentData.SchoolName}</p>
-                  <p>Grade: &nbsp;{studentData.Grade}</p>
+                  <p className="blink">Grade: &nbsp;{studentData.Grade}</p>
                  
                 </div>
               )
@@ -80,9 +80,13 @@ const Certificate = () => {
           </div>
 
         </div>
+
+        <div id="watermark">RESULTS</div>
       </main>
     </> 
   );
 };
+
+
 
 export default Certificate;
