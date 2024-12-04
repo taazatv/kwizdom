@@ -16,7 +16,7 @@ const Header = () => {
 
           <div>
             <p><a href="https://www.taazatv.com">Home</a></p>
-            <p><Link to="/about">About Kwizdom</Link></p>
+            <p><Link to="/about">{window.innerWidth>500?"About Kwizdom":"About"}</Link></p>
                
 
 

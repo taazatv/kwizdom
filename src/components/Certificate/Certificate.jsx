@@ -14,7 +14,7 @@ const Certificate = () => {
 
   const downloadPDF = () => {
     const input = pdfRef.current;
-    html2canvas(input, { scale: 3, useCORS: true }).then((canvas) => {
+    html2canvas(input, { scale: 5, useCORS: true }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();

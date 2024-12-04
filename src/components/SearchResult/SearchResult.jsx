@@ -112,7 +112,7 @@ const SearchResult = () => {
 
               <div>
                 <img src="/herologo2.png" alt="" style={{width: "12rem", height: "auto", transform: "translateX(-20px)", position: "absolute",
-    top: "72px", left: "20%"}}/>
+    top: "72px", left: "5%"}}/>
 
               </div>
             </form>
