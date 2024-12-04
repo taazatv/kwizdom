@@ -87,7 +87,8 @@
     width: auto;
     height: 300px;
     position:fixed;
-    bottom: 4rem;
+    bottom: 10rem;
+    right: 9rem;
 
 }
 .social-visible{

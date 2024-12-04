@@ -33,7 +33,7 @@ const Certificate = () => {
         imgWidth * ratio,
         imgHeight * ratio
       );
-      pdf.save("certificate.pdf");
+      pdf.save(studentData.StudentName+".pdf");
     });
   };
   
@@ -65,7 +65,7 @@ const Certificate = () => {
           </div>
 
           <p style={{fontSize: "2rem", fontWeight:900}}>Grade Table : </p>
-          <img src= "/grade.png " style={{ marginLeft: "-4rem", marginBottom: "2rem"}}></img>
+          <img src= "/grade.png " style={{ width:"400px", marginBottom: "2rem"}}></img>
           <br />
           <img className= "herologo" src="herologo.png" width="500"></img>
           

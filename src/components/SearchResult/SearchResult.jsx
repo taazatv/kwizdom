@@ -86,7 +86,7 @@ const SearchResult = () => {
                     ))
                   ) : (
                     <div style={{ fontSize: "var(--tertiary-font)" }}>
-                      No SchoolName present
+                      No School Name present
                     </div>
                   )}
                 </Combobox.Options>
@@ -99,7 +99,7 @@ const SearchResult = () => {
               onChange={(e) => setPhoneNumber(Number(e.target.value.toString().substring(0,10) )|| "" )}
               />
 
-              <p style={{color:"red",textAlign:"left",width:"100%" }}>{studentData.message && "*Wrong Data*"}</p>
+              <p style={{color:"red",textAlign:"left",width:"100%" }}>{studentData.message && "*No Data Found *"}</p>
               <button onClick={submitHandler}>Get your Result</button>
 
               <Link

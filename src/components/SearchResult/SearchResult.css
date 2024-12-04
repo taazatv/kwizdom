@@ -179,14 +179,14 @@ form input::placeholder{
     height: 10px;
     width: 100%;
     position: absolute;
-    margin-top: 159px;
+    margin-top: 125px;
 }
 
 .bar-line-2{
     background-color:var(--bar-line-2-bg-color);
     height: 30px;
     width: 100%;
-    margin-top: 168px;
+    margin-top: 134px;
 }
 
 .bar-line-2 .inner-bar{
