@@ -6,7 +6,13 @@ import { Combobox } from "@headlessui/react";
 
 const schoolNames = [
   "ASIAN INTERNATIONAL SCHOOL",
-  "ABHINAV  BHARTI"
+  "ABHINAV  BHARTI",
+  "ASSEMBLY OF GODS CHURCH SCHOOL",
+  "Birla High School",
+  "BDM INTERNATIONAL SCHOOL",
+  "ELIAS MEYER FS & TT SCHOOL",
+  "LABONYA PUBLIC SCHOOL",
+  "NOPANY HIGH SCHOOL"
 ];
 
 const ChangeRequest = () => {
