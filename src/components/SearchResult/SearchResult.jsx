@@ -5,6 +5,7 @@ import { Combobox } from "@headlessui/react";
 import { useNavigate,Link } from "react-router-dom";
 import { MyContext } from "../../store";
 import axios from "axios"
+import Ticker from "react-ticker";
 
 const schoolNames = [
  "ABHINAV  BHARTI SCHOOL",
@@ -60,6 +61,14 @@ const SearchResult = () => {
   return (
     <>
       <main className="search-result-container">
+        <Ticker> 
+        {({ index }) => (
+            <>
+                <span>Results Published for: </span>
+                {schoolNames.map(schoolName=>(<span> •  {schoolName}</span>))} 
+            </>
+        )}
+        </Ticker>
         <div className="search-result">
           <div className="left">
             <div className="hero-logo">
@@ -81,7 +90,7 @@ const SearchResult = () => {
 
                 <Combobox.Options className="combo">
                   {filteredSchool.length > 0 ? (
-                    filteredSchool.slice(0, 8).map((school) => (
+                    filteredSchool.map((school) => (
                       <Combobox.Option
                         key={school}
                         value={school}
@@ -96,7 +105,8 @@ const SearchResult = () => {
                     ))
                   ) : (
                     <div style={{ fontSize: "var(--tertiary-font)" }}>
-                      No School Name present
+                    School name not on list? Results will be updated shortly
+
                     </div>
                   )}
                 </Combobox.Options>
