@@ -33,14 +33,13 @@
 
 .ticker{
     background-color: red;
-    transform: translateY(15px);
+    transform: translateY(20px);
 }
 
-.ticker__element{
-   width:300rem;
+.ticker span{
    font-weight: bold;
    color:#efefef;
-   font-size:1.25rem;
+   font-size:1.75rem;
 }
 .hero-img{
     width: auto;

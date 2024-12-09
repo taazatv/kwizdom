@@ -61,14 +61,14 @@ const SearchResult = () => {
   return (
     <>
       <main className="search-result-container">
-        <Ticker> 
-        {({ index }) => (
-            <>
-                <span>Results Published for: </span>
+        <marquee className="ticker"> 
+      
+            
+                <span>RESULTS PUBLISED FOR </span>
                 {schoolNames.map(schoolName=>(<span> •  {schoolName}</span>))} 
-            </>
-        )}
-        </Ticker>
+           
+      
+        </marquee>
         <div className="search-result">
           <div className="left">
             <div className="hero-logo">
