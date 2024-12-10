@@ -5,7 +5,6 @@ import { Combobox } from "@headlessui/react";
 import { useNavigate,Link } from "react-router-dom";
 import { MyContext } from "../../store";
 import axios from "axios"
-import Ticker from "react-ticker";
 
 const schoolNames = [
  "ABHINAV  BHARTI SCHOOL",
