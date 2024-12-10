@@ -18,4 +18,8 @@ video{
     margin-bottom:4rem;
 }
 
-
+@media screen and (max-width: 400px) {
+    .about-text {
+        padding: 2rem 4rem;
+    }
+}

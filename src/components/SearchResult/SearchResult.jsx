@@ -2,31 +2,30 @@ import React, { useContext, useState } from "react";
 import "./SearchResult.css";
 
 import { Combobox } from "@headlessui/react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { MyContext } from "../../store";
-import axios from "axios"
+import axios from "axios";
 
 const schoolNames = [
- "ABHINAV  BHARTI SCHOOL",
-"ASIAN INTERNATIONAL SCHOOL",
-"ASSEMBLY OF GODS CHURCH SCHOOL",
-"BDM INTERNATIONAL SCHOOL",
-"Birla High School",
-"DON BOSCO PARK CIRCUS",
-"ELIAS MEYER FS & TT SCHOOL",
-"LA MARTINIERE FOR GIRLS",
-"LABONYA PUBLIC SCHOOL",
-"NATIONAL ENGLISH SCHOOL",
-"NOPANY HIGH SCHOOL",
-"SHREE BALKRISHNA VITHAL NATH BALIKA VIDYALAYA"
+  "ABHINAV  BHARTI SCHOOL",
+  "ASIAN INTERNATIONAL SCHOOL",
+  "ASSEMBLY OF GODS CHURCH SCHOOL",
+  "BDM INTERNATIONAL SCHOOL",
+  "Birla High School",
+  "DON BOSCO PARK CIRCUS",
+  "ELIAS MEYER FS & TT SCHOOL",
+  "LA MARTINIERE FOR GIRLS",
+  "LABONYA PUBLIC SCHOOL",
+  "NATIONAL ENGLISH SCHOOL",
+  "NOPANY HIGH SCHOOL",
+  "SHREE BALKRISHNA VITHAL NATH BALIKA VIDYALAYA",
 ];
 
 const SearchResult = () => {
-
   const { studentData, setStudentData } = useContext(MyContext);
   console.log(studentData);
 
-  const [PhoneNumber,setPhoneNumber] = useState("")
+  const [PhoneNumber, setPhoneNumber] = useState("");
   const [SchoolName, setSchoolName] = useState("");
   const [query, setQuery] = useState("");
 
@@ -40,33 +39,33 @@ const SearchResult = () => {
             .includes(query.toLocaleLowerCase().replace(/\s+/g, ""));
         });
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const submitHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const { data } = await axios.post("https://kwizdom2-0-backend.onrender.com/api/search", {
-        SchoolName,
-        PhoneNumber,
-      });
+      const { data } = await axios.post(
+        "https://kwizdom2-0-backend.onrender.com/api/search",
+        {
+          SchoolName,
+          PhoneNumber,
+        }
+      );
       setStudentData(data);
-      if(data._id != undefined)
-      navigate("/certificate");
-    } catch (error) {console.log(error)}
+      if (data._id != undefined) navigate("/certificate");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-
-  
   return (
     <>
       <main className="search-result-container">
-        <marquee className="ticker"> 
-      
-            
-                <span>RESULTS PUBLISED FOR </span>
-                {schoolNames.map(schoolName=>(<span> •  {schoolName}</span>))} 
-           
-      
+        <marquee className="ticker">
+          <span>RESULTS PUBLISED FOR </span>
+          {schoolNames.map((schoolName) => (
+            <span> • {schoolName}</span>
+          ))}
         </marquee>
         <div className="search-result">
           <div className="left">
@@ -79,7 +78,7 @@ const SearchResult = () => {
             <form className="form">
               {/* <input type="text" placeholder="School Name" /> */}
 
-              <Combobox  value={SchoolName} onChange={setSchoolName}>
+              <Combobox value={SchoolName} onChange={setSchoolName}>
                 <Combobox.Input
                   onChange={(event) => setQuery(event.target.value)}
                   className="combo-input"
@@ -104,21 +103,31 @@ const SearchResult = () => {
                     ))
                   ) : (
                     <div style={{ fontSize: "var(--tertiary-font)" }}>
-                    School name not on list? Results will be updated shortly
-
+                      School name not on list? Results will be updated shortly
                     </div>
                   )}
                 </Combobox.Options>
               </Combobox>
 
-              <input 
-              type="number" 
-              placeholder="Mobile Number" 
-              value={PhoneNumber}
-              onChange={(e) => setPhoneNumber(Number(e.target.value.toString().substring(0,10) )|| "" )}
+              <input
+                type="number"
+                placeholder="Mobile Number"
+                value={PhoneNumber}
+                onChange={(e) =>
+                  setPhoneNumber(
+                    Number(e.target.value.toString().substring(0, 10)) || ""
+                  )
+                }
               />
 
-              <p style={{color:"red",textAlign:"left",width:"100%" }}>{studentData.message && "*No Data Found *"}</p>
+              <div style={{ fontWeight: "bold", fontStyle: "italic" }}>
+                *Please note that if the student has not filled the OMR sheet
+                properly, the results will not be published.
+              </div>
+
+              <p style={{ color: "red", textAlign: "left", width: "100%" }}>
+                {studentData.message && "*No Data Found *"}
+              </p>
               <button onClick={submitHandler}>Get your Result</button>
 
               <Link
@@ -130,12 +139,20 @@ const SearchResult = () => {
               </Link>
 
               <div>
-                <img src="/herologo2.png" alt="" style={{width: "12rem", height: "auto", transform: "translateX(-20px)", position: "absolute",
-    top: "72px", left: "5%"}}/>
-
+                <img
+                  src="/herologo2.png"
+                  alt=""
+                  style={{
+                    width: "12rem",
+                    height: "auto",
+                    transform: "translateX(-20px)",
+                    position: "absolute",
+                    top: "72px",
+                    left: "5%",
+                  }}
+                />
               </div>
             </form>
-
           </div>
 
           <div className="right">
@@ -183,16 +200,16 @@ const SearchResult = () => {
           <div>
             <p>Follow Us on</p>
             <span>
-            <i class="bi bi-facebook"></i>
+              <i class="bi bi-facebook"></i>
             </span>
             <span>
-            <i class="bi bi-twitter-x"></i>
+              <i class="bi bi-twitter-x"></i>
             </span>
             <span>
-            <i class="bi bi-instagram"></i>
+              <i class="bi bi-instagram"></i>
             </span>
             <span>
-            <i class="bi bi-youtube"></i>
+              <i class="bi bi-youtube"></i>
             </span>
             <p>Taaza Tv</p>
             <p>To Watch Taaza Tv live download the mobile App</p>
