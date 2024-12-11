@@ -6,18 +6,32 @@ import { useNavigate } from "react-router-dom";
 import { Combobox } from "@headlessui/react";
 
 const schoolNames = [
- "ABHINAV  BHARTI SCHOOL",
-"ASIAN INTERNATIONAL SCHOOL",
-"ASSEMBLY OF GODS CHURCH SCHOOL",
-"BDM INTERNATIONAL SCHOOL",
-"Birla High School",
-"DON BOSCO PARK CIRCUS",
-"ELIAS MEYER FS & TT SCHOOL",
-"LA MARTINIERE FOR GIRLS",
-"LABONYA PUBLIC SCHOOL",
-"NATIONAL ENGLISH SCHOOL",
-"NOPANY HIGH SCHOOL",
-"SHREE BALKRISHNA VITHAL NATH BALIKA VIDYALAYA"
+  "ABHINAV  BHARTI SCHOOL",
+  "ARMY PUBLIC SCHOOL",
+  "ASIAN INTERNATIONAL SCHOOL",
+  "ASSEMBLY OF GODS CHURCH SCHOOL",
+  "BDM INTERNATIONAL SCHOOL",
+  "Birla High School",
+  "CALCUTTA ANGLO GUJRATI SCHOOL",
+  "CALCUTTA PUBLIC SCHOOL ASWININAGAR",
+  "CALCUTTA PUBLIC SCHOOL BIDHAN PARK",
+  "CALCUTTA PUBLIC SCHOOL JORAMANDIR",
+  "DON BOSCO PARK CIRCUS",
+  "LA MARTINIERE FOR BOYS",
+  "ELIAS MEYER FS & TT SCHOOL",
+  "I.P. MEMORIAL SCHOOL",
+  "LA MARTINIERE FOR GIRLS",
+  "LABONYA PUBLIC SCHOOL",
+  "NATIONAL ENGLISH SCHOOL BAGUIHATI",
+  "NATIONAL ENGLISH SCHOOL RAJARHAT",
+  "NOPANY HIGH SCHOOL",
+  "SHREE BALKRISHNA VITHAL NATH BALIKA VIDYALAYA",
+  "SHREE BALKRISHNA VITHALNATH VIDYALAYA",
+  "SHREE JAIN SWETAMBER TERAPANTHI VADYALAYA",
+  "ST. ANDREWS PUBLIC SCHOOL",
+  "ST. JOSEPH SCHOOL",
+  "ST. XAVIERS INSTITUTION, RUIYA",
+  "THE BHAWANIPUR SCHOOL",
 ];
 
 const Forgot = () => {
@@ -93,9 +107,7 @@ const Forgot = () => {
       : allStudents
           .filter((student) => student.SchoolName === SchoolName)
           .filter((student) =>
-            student.StudentName.toLowerCase().includes(
-              query2.toLowerCase()
-            )
+            student.StudentName.toLowerCase().includes(query2.toLowerCase())
           );
 
   return (
