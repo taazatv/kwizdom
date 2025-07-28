@@ -15,7 +15,7 @@ const Header = () => {
           <Link to="/search" style={{textDecoration:"none",color:"var(--color-white)"}}><h1>KWiZDoM</h1></Link>
 
           <div>
-            <p><a href="https://www.taazatv.com">Home</a></p>
+            <p><a href="/">Home</a></p>
             <p><Link to="/about">{window.innerWidth>500?"About Kwizdom":"About"}</Link></p>
                
 

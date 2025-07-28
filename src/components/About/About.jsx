@@ -1,15 +1,59 @@
 import React from "react"
 import "./About.css"
-export default function About(){
-    return<>
-    <video src="/aboutvideo.mp4" autoPlay loop width={600} height={400} ></video>
-        <div className="about-text">Taaza TV has officially started its flagship quiz competition, "KWIZDOM 2.0," aimed at fostering academic excellence and national pride among students in Kolkata. This unique initiative invites students from grades 6, 7, and 8 from the city’s top 100 schools to participate in a journey celebrating India’s glorious history, general knowledge, and current affairs.
-<br/>
-The competition begins with preliminary rounds conducted within school campuses. Students will face a 30-minute challenge, answering multiple-choice questions (MCQs) on topics like India’s history, culture, and current events. These rounds will be held either in classrooms or auditoriums, with answers recorded on OMR sheets for accuracy and fairness.
-<br/>
-Following the initial stage, the top three scorers—one from each grade—will form a team to represent their school in the advanced rounds. The quiz show will culminate in a spectacular grand finale with a live audience and extensive media coverage.
-With over 50,000 students KWIZDOM 2.0 promises to be a monumental event in the city’s academic calendar. Taaza TV’s vision for the contest is to provide students with an engaging platform to demonstrate their knowledge while promoting teamwork, healthy competition, and a love for India’s rich heritage.
-<br/>
-Each of 50,000 student also gets a "Student Kit" containing gifts and vouchers by our sponsors.</div>
+export default function About() {
+    return <>
+        <video src="/aboutvideo.mp4" autoPlay loop width={600} height={400} ></video>
+        <div className="about-text">Taaza TV proudly presents KWIZDOM 3.0, its flagship inter-school quiz competition, designed to nurture academic excellence and instill a sense of national pride among students in Kolkata. This exciting initiative invites students from Grades 9, 10, and 11 across the city’s top 100+ schools to embark on a knowledge-filled journey celebrating India’s rich history, current affairs, and general awareness.
+            <br />
+            The competition kicks off with preliminary rounds hosted on school campuses, where students take on a 30-minute multiple-choice challenge. Covering topics such as Indian history, culture, and recent events, the quiz in an exam format conducted in classrooms or auditoriums, with answers marked on OMR sheets to ensure accuracy and fairness.
+            <br />
+            From each school, the top scorer in each grade advances to form a three-member team representing their school in the advanced stages of the competition. The journey culminates in a grand finale featuring a live audience and wide media coverage—promising to be one of the most anticipated academic events of the year.
+
+            With participation expected from over 50,000 students, KWIZDOM 3.0 is set to become again a landmark event in the city’s academic landscape. Each participant also receives a "Student Kit" filled with exciting gifts and sponsor vouchers. Through this initiative, Taaza TV aims to create a dynamic, engaging experience that promotes learning, teamwork, and a deep appreciation for India’s cultural heritage.
+
+            Kwizdom 3.0 is an inititive of Taaza TV along with Garden Reach Shipbuilders and Enginners Limited. Our sponsors this year are : <br />
+
+            <br />
+
+            <span className="title-sponsor">
+                Title Sponsor :
+            </span>
+            <ul>
+                <li>GARDEN REACH SHIPBUILDERS AND ENGINEERS LIMITED</li>
+            </ul>
+
+            <span className="powered-by">
+                Powered By :
+            </span>
+           
+            <ul>
+                <li>EMAMI HEALTHY & TASTY</li>
+                <li>DISNEY ADVENTURE | EXCITING TALES</li>
+            </ul>
+       
+
+            <span className="sponsor">
+                Sponsor :
+            </span>
+            <ul>
+                <li>WOW MOMO</li>
+                <li>NATURAL GROUP</li>
+                <li> AJANTA SHOES</li>
+                <li>AKASH INSTITUTE</li>
+                <li>WIN PENS</li>
+                <li> BHAGWATI BISCUITS</li>
+                <li>NICCO PARK</li>
+                
+            </ul>
+
+            </div>
     </>
 }
+
+
+
+
+
+
+
+

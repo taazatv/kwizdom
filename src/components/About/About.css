@@ -18,6 +18,17 @@ video{
     margin-bottom:4rem;
 }
 
+.title-sponsor,.powered-by,.sponsor{
+ background-color: rgb(53, 53, 253);
+    color:white;
+    font-weight: bold;
+}
+
+ul li{
+    font-weight: bold;
+}
+
+
 @media screen and (max-width: 400px) {
     .about-text {
         padding: 2rem 4rem;
