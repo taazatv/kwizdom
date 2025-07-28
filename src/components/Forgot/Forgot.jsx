@@ -90,7 +90,7 @@ const Forgot = () => {
     <main className="forgot-box">
       <div className="forgot">
         <div>
-          <img src="/toplogo.png" alt="Hero" />
+          <img src="/toplogo.jpg" alt="Hero" />
         </div>
         <form>
           <h1>Enter all the necessary info and Get your result.</h1>
