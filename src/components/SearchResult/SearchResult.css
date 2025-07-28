@@ -59,19 +59,26 @@
   font-weight: 500;
   font-size: var(--secondary-font);
   width: 70%;
-  margin: 150px auto auto;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .hero-logo {
-  width: 90%;
-  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 40px
 }
 
 .hero-logo img {
+   width: 650px;
+  height: auto;
   object-fit: contain;
-  height: 200%;
-  width: 200%;
-  max-width: 1200px;
+  transform: none;
+  position: relative;
+  margin: auto;
 }
 
 .form {

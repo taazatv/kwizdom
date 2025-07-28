@@ -7,81 +7,6 @@ import { MyContext } from "../../store";
 import axios from "axios";
 
 const schoolNames = [
-  // "ABHINAV  BHARTI SCHOOL",
-  // "ADITYA ACADEMY SENIOR SECONDARY DUM DUM",
-  // "ADMIRE ENGLISH MEDIUM SCHOOL",
-  // "AGRASAIN BALIKA SIKSHA SADAN",
-  // "ARMY PUBLIC SCHOOL",
-  // "ASHOK HALL GIRLS SCHOOL",
-  // "ASIAN INTERNATIONAL SCHOOL",
-  // "ASSEMBLY OF GODS CHURCH SCHOOL",
-  // "BALIKA SHIKSHA SADAN",
-  // "BDM INTERNATIONAL SCHOOL",
-  // "BIHANI ACADEMY",
-  // "Birla High School",
-  // "BIRLA HIGH SCHOOL MUKUNDAPUR",
-  // "CALCUTTA ANGLO GUJRATI SCHOOL",
-  // "CALCUTTA BOYS SCHOOL",
-  // "CALCUTTA PUBLIC SCHOOL ASWININAGAR",
-  // "CALCUTTA PUBLIC SCHOOL BIDHAN PARK",
-  // "CALCUTTA PUBLIC SCHOOL JORAMANDIR",
-  // "CENTRAL MODERN SCHOOL",
-  // "DELHI PUBLIC SCHOOL HOWRAH",
-  // "DIPTI BRIDGEWELL SCHOOL",
-  // "DON BOSCO PARK CIRCUS",
-  // "DPS RUBY PARK",
-  // "ELIAS MEYER FS & TT SCHOOL",
-  // "G.D. BIRLA CENTRE FOR EDUCATION",
-  // "GURUKUL ENGLISH MEDIUM SCHOOL",
-  // "GYAN BHARATI BALIKA VIDYALAYA",
-  // "GYAN BHARTI ENGLISH MEDIUM",
-  // "GYAN BHARTI VIDYAPITH",
-  // "HARYANA VIDYAMANDIR",
-  // "HCK JAIN VIDYALAYA",
-  // "I.P. MEMORIAL SCHOOL",
-  // "JAGATDAL LALITA DEVI BALIKA VIDYALAYA",
-  // "JAGATDAL SHRI HARI UCHHA VIDYALAYA",
-  // "JAGDAL ANGLO INDIA HIGH SCHOOL",
-  // "JAGDAL KAMALA HIGH SCHOOL",
-  // "JIBREEL INTERNATIONAL SCHOOL",
-  // "KAKINARA HIMAYATUL GHURBA HIGH SCHOOL",
-  // "KAKINARA URDU HIGH SCHOOL",
-  // "KANKINARA ARYA VIDYALAYA",
-  // "KUSHWAHA HIGH SCHOOL",
-  // "LA MARTINIERE FOR BOYS",
-  // "LA MARTINIERE FOR GIRLS",
-  // "LABONYA PUBLIC SCHOOL",
-  // "M.P. BIRLA FOUNDATION HIGHER SECONDARY SCHOOL",
-  // "MAHESHWARI BALIKA VIDYALAYA",
-  // "MARWARI BALIKA  VIDYALAYA",
-  // "NATIONAL ENGLISH SCHOOL BAGUIHATI",
-  // "NATIONAL ENGLISH SCHOOL RAJARHAT",
-  // "NEWTOWN SCHOOL",
-  // "NOPANY HIGH SCHOOL",
-  // "SAIFEE HALL",
-  // "SALT LAKE SHIKHSA NIKETAN",
-  // "SHAM GOLDEN ACADEMY",
-  // "SHASTRI HINDI HIGH SCHOOL",
-  // "SHAW PUBLIC SCHOOL",
-  // "SHREE BALKRISHNA VITHAL NATH BALIKA VIDYALAYA",
-  // "SHREE BALKRISHNA VITHALNATH VIDYALAYA",
-  // "SHREE DIGAMBAR JAIN VIDYALAYA",
-  // "SHREE JAIN SWETAMBAR TERAPANTHI VIDYALAYA GIRLS",
-  // "SHREE JAIN SWETAMBER TERAPANTHI VIDYALAYA",
-  // "SHREE MAHESHWARI VIDYALAYA",
-  // "SOUTH POINT HIGH SCHOOL",
-  // "ST ANNS DAY SCHOOL",
-  // "ST. ANDREWS PUBLIC SCHOOL",
-  // "ST. DENIS SCHOOL HOWRAH",
-  // "ST. JOSEPH SCHOOL",
-  // "ST. MICHAELS ACADEMY",
-  // "ST. XAVIERS COLLEGIATE SCHOOL",
-  // "ST. XAVIERS INSTITUTION, RUIYA",
-  // "SUNRISE ENGLISH MEDIUM SCHOOL",
-  // "SUNSHINE ACADEMY",
-  // "SUSHILA BIRLA GIRLS SCHOOL",
-  // "THE BHAWANIPUR SCHOOL",
-  // "THE HERITAGE SCHOOL",
   "RESULTS TO BE PUBLISH SOON",
   "RESULTS TO BE PUBLISH SOON",
   "RESULTS TO BE PUBLISH SOON",
@@ -102,7 +27,6 @@ const schoolNames = [
   "RESULTS TO BE PUBLISH SOON",
   "RESULTS TO BE PUBLISH SOON",
   "RESULTS TO BE PUBLISH SOON",
-
 ];
 
 const SearchResult = () => {
@@ -117,11 +41,11 @@ const SearchResult = () => {
     query === ""
       ? schoolNames
       : schoolNames.filter((schoolName) => {
-        return schoolName
-          .toLocaleLowerCase()
-          .replace(/\s+/g, "")
-          .includes(query.toLocaleLowerCase().replace(/\s+/g, ""));
-      });
+          return schoolName
+            .toLocaleLowerCase()
+            .replace(/\s+/g, "")
+            .includes(query.toLocaleLowerCase().replace(/\s+/g, ""));
+        });
 
   const navigate = useNavigate();
 
@@ -154,14 +78,12 @@ const SearchResult = () => {
         <div className="search-result">
           <div className="left">
             <div className="hero-logo">
-              <img src="/herologo.png" alt="" />
+              <img src="/toplogo.jpg" alt="toplogo" />
             </div>
 
             <p>Enter all the necessary info and Get your result.</p>
 
             <form className="form">
-              {/* <input type="text" placeholder="School Name" /> */}
-
               <Combobox value={SchoolName} onChange={setSchoolName}>
                 <Combobox.Input
                   onChange={(event) => setQuery(event.target.value)}
@@ -219,20 +141,17 @@ const SearchResult = () => {
                 style={{ color: "black", textDecoration: "none" }}
                 className="redbutton"
               >
-                <p>Cant find your name ?</p>
+                <p>Can't find your name ?</p>
               </Link>
 
-              <div>
+              <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
                 <img
                   src="/herologo2.png"
-                  alt=""
+                  alt="sponsor"
                   style={{
                     width: "12rem",
                     height: "auto",
-                    transform: "translateX(-20px)",
-                    position: "absolute",
-                    top: "72px",
-                    left: "5%",
+                    marginTop: "20px"
                   }}
                 />
               </div>
@@ -261,21 +180,6 @@ const SearchResult = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className="social-links">
-            <div>
-              <img src="/wa.png" alt="" />
-            </div>
-            <div>
-              <img src="/insta.png" alt="" />
-            </div>
-            <div>
-              <img src="/fb.png" alt="" />
-            </div>
-            <div>
-              <img src="/yt.png" alt="" />
-            </div>
-          </div> */}
         </div>
       </main>
       <div className="bar-line" />
