@@ -7,8 +7,8 @@ import { MyContext } from "../../store";
 import axios from "axios";
 
 const schoolNames = [
-  "APEEJAY SCHOOL PARK STREET",
-  "KHALSA ENGLISH HIGH SCHOOL"
+  "Apeejay School Park Street",
+  "Khalsa English High School"
 ];
 
 const SearchResult = () => {
