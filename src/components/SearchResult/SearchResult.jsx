@@ -223,7 +223,7 @@ const SearchResult = () => {
       </div>
       <div className="bar-line-3">
         <p>
-          Taaza TV is available on Siti Cable (171), Hathway (214), GTPL (213)
+          Taaza TV is available on Hathway (214), GTPL (213)
           also on JIO TV / Daily Hunt.
         </p>
       </div>
