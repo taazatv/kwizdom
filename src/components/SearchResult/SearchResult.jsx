@@ -7,26 +7,8 @@ import { MyContext } from "../../store";
 import axios from "axios";
 
 const schoolNames = [
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
-  "RESULTS TO BE PUBLISH SOON",
+  "APEEJAY SCHOOL PARK STREET",
+  "KHALSA ENGLISH HIGH SCHOOL"
 ];
 
 const SearchResult = () => {
@@ -70,7 +52,7 @@ const SearchResult = () => {
     <>
       <main className="search-result-container">
         <marquee className="ticker">
-          <span> RESULTS TO BE PUBLISH SOON</span>
+          <span> PUBLISHED RESULT OF SCHOOL </span>
           {schoolNames.map((schoolName) => (
             <span> • {schoolName}</span>
           ))}
