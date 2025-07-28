@@ -67,7 +67,7 @@ const Certificate = () => {
           <p style={{fontSize: "2rem", fontWeight:900}}>Grade Table : </p>
           <img src= "/grade.png " style={{ width:"400px", marginBottom: "2rem"}}></img>
           <br />
-          <img className= "herologo" src="herologo.png" width="500"></img>
+          <img className= "herologo" src="toplogo.jpg" width="500"></img>
           
           <div width={4800} height={3200} className ="image" ref={pdfRef}>
             <h1>{studentData && studentData.StudentName ? studentData.StudentName : "Student Name"}</h1>
