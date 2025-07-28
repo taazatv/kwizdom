@@ -272,6 +272,10 @@ form input::placeholder {
   width: 100vw;
 }
 
+.link{
+  color: white;
+}
+
 .combo {
   text-decoration: none;
   color: gray;

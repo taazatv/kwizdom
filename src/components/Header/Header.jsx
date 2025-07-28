@@ -21,7 +21,7 @@ const Header = () => {
 
 
             {/* <p>About GRSE</p>  */}
-            <p><a href="https://taazatv.com/contact.php"> Contact Us</a></p>
+            <p><a href="https://taazatv.com/contact.php" target="_blank"> Contact Us</a></p>
 
             {/* <div>
               <i class="bi bi-list"></i>

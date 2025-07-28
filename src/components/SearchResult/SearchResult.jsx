@@ -13,7 +13,6 @@ const schoolNames = [
 
 const SearchResult = () => {
   const { studentData, setStudentData } = useContext(MyContext);
-  console.log(studentData);
 
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [SchoolName, setSchoolName] = useState("");
@@ -54,7 +53,7 @@ const SearchResult = () => {
         <marquee className="ticker">
           <span> PUBLISHED RESULT OF SCHOOL </span>
           {schoolNames.map((schoolName) => (
-            <span> • {schoolName}</span>
+            <span key={schoolName}> • {schoolName}</span>
           ))}
         </marquee>
         <div className="search-result">
@@ -73,7 +72,6 @@ const SearchResult = () => {
                   autoComplete="off"
                   placeholder="School Names"
                 />
-
                 <Combobox.Options className="combo">
                   {filteredSchool.length > 0 ? (
                     filteredSchool.map((school) => (
@@ -82,7 +80,7 @@ const SearchResult = () => {
                         value={school}
                         className="option"
                       >
-                        {({ active, selected }) => (
+                        {({ active }) => (
                           <div className={`${active ? "bg-green" : "bg-gray"}`}>
                             {school}
                           </div>
@@ -170,16 +168,44 @@ const SearchResult = () => {
           <div>
             <p>Follow Us on</p>
             <span>
-              <i class="bi bi-facebook"></i>
+              <a
+                className="link"
+                href="https://www.facebook.com/taazabengal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-facebook"></i>
+              </a>
             </span>
             <span>
-              <i class="bi bi-twitter-x"></i>
+              <a
+                className="link"
+                href="https://x.com/taazatv"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-twitter-x"></i>
+              </a>
             </span>
             <span>
-              <i class="bi bi-instagram"></i>
+              <a
+                className="link"
+                href="https://www.instagram.com/taazatvchannel/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
             </span>
             <span>
-              <i class="bi bi-youtube"></i>
+              <a
+                className="link"
+                href="https://www.youtube.com/@taazatv1632"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-youtube"></i>
+              </a>
             </span>
             <p>Taaza Tv</p>
             <p>To Watch Taaza Tv live download the mobile App</p>
@@ -187,10 +213,10 @@ const SearchResult = () => {
 
           <div>
             <div>
-              <img src="/googleplay.webp" alt="" />
+              <img src="/googleplay.webp" alt="Google Play" />
             </div>
             <div>
-              <img src="/appstore.png" alt="" />
+              <img src="/appstore.png" alt="App Store" />
             </div>
           </div>
         </div>
