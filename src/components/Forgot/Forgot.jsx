@@ -11,7 +11,7 @@ const schoolNames = [
   "Adamas World School",
   "Asian International School",
   "Salt Lake Point School",
-  "St. Xavier's Collegiate School",
+  "St.Xavier's Collegiate School",
 ];
 
 const Forgot = () => {
