@@ -12,7 +12,7 @@ const schoolNames = [
   "Adamas World School",
   "Asian International School",
   "Salt Lake Point School",
-  "St.Xavier's Collegiate School",
+  "St. Xaviers Collegiate School",
 ];
 
 const SearchResult = () => {
