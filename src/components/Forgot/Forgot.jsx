@@ -7,7 +7,11 @@ import { Combobox } from "@headlessui/react";
 
 const schoolNames = [
   "Apeejay School Park Street",
-  "Khalsa English High School"
+  "Khalsa English High School",
+  "Adamas World School",
+  "Asian International School",
+  "Salt Lake Point School",
+  "St. Xavier's Collegiate School",
 ];
 
 const Forgot = () => {

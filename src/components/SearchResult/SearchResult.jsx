@@ -8,7 +8,11 @@ import axios from "axios";
 
 const schoolNames = [
   "Apeejay School Park Street",
-  "Khalsa English High School"
+  "Khalsa English High School",
+  "Adamas World School",
+  "Asian International School",
+  "Salt Lake Point School",
+  "St. Xavier's Collegiate School",
 ];
 
 const SearchResult = () => {
@@ -124,14 +128,20 @@ const SearchResult = () => {
                 <p>Can't find your name ?</p>
               </Link>
 
-              <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <img
                   src="/herologo2.png"
                   alt="sponsor"
                   style={{
                     width: "12rem",
                     height: "auto",
-                    marginTop: "20px"
+                    marginTop: "20px",
                   }}
                 />
               </div>
@@ -223,8 +233,8 @@ const SearchResult = () => {
       </div>
       <div className="bar-line-3">
         <p>
-          Taaza TV is available on Hathway (214), GTPL (213)
-          also on JIO TV / Daily Hunt.
+          Taaza TV is available on Hathway (214), GTPL (213) also on JIO TV /
+          Daily Hunt.
         </p>
       </div>
     </>
