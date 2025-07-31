@@ -6,12 +6,20 @@ import { useNavigate } from "react-router-dom";
 import { Combobox } from "@headlessui/react";
 
 const schoolNames = [
-  "Apeejay School Park Street",
-  "Khalsa English High School",
-  "Adamas World School",
-  "Asian International School",
-  "Salt Lake Point School",
-  "St. Xaviers Collegiate School",
+  "APEEJAY SCHOOL PARK STREET",
+  "KHALSA ENGLISH HIGH SCHOOL",
+  "ADAMAS WORLD SCHOOL",
+  "ASIAN INTERNATIONAL SCHOOL",
+  "SALT LAKE POINT SCHOOL",
+  "ST. XAVIERS COLLEGIATE SCHOOL",
+  "GYAN BHARTI BALIKA VIDYALAYA",
+  "GYAN BHARTI ENGLISH MEDIUM SCHOOL",
+  "GYAN BHARTI VIDYAPEETH",
+  "NOPANY HIGH SCHOOL",
+  "SHREE BALKRISHNA VITHALNATH VIDYALAY",
+  "SHREE BALIKRISHNA VITHALNATH BALIKA VIDYALAYA",
+  "SHREE MAHESHWARI VIDYALAYA",
+  "THE HERITAGE SCHOOL",
 ];
 
 const Forgot = () => {
