@@ -20,6 +20,11 @@ const schoolNames = [
   "SHREE BALIKRISHNA VITHALNATH BALIKA VIDYALAYA",
   "SHREE MAHESHWARI VIDYALAYA",
   "THE HERITAGE SCHOOL",
+  "Don Bosco Park Circus",
+  "DPS Howrah",
+  "DPS RUBY PARK",
+  "Shree Jain Howrah",
+  "St. Andrews Public School MG Road",
 ];
 
 const Forgot = () => {
