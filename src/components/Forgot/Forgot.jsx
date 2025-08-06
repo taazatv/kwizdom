@@ -25,6 +25,20 @@ const schoolNames = [
   "DPS RUBY PARK",
   "Shree Jain Howrah",
   "St. Andrews Public School MG Road",
+  "Bhavans Gangabux Kanoria Vidyamandir",
+  "Calcutta Anglo Gujrati School",
+  "IP Memorial School",
+  "Jalan Balika Vidyalaya",
+  "Jibreel International School",
+  "Marwari Balika Vidyalaya",
+  "Mp Birla F.H.S School",
+  "National English School",
+  "Scottish Church School",
+  "Scottish Church School",
+  "Shree Didoo Maheshwari",
+  "Shree Jain Digamber",
+  "Shree Jain Shwetamber Vidyalaya",
+  "The Newtwon School",
 ];
 
 const Forgot = () => {
