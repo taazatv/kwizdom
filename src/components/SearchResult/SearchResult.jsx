@@ -88,6 +88,18 @@ const schoolNames = [
   "Starling International",
   "Sunrise English Medium",
   "Tantia High School",
+  "Adamas International School",
+  "Calcutta Public School Baguihati",
+  "Evergreen High School",
+  "Grace Ling Liang English School",
+  "Khalsa Model SS",
+  "Lajpat Balika Vidyalaya",
+  "Loreto Day School Dharamtala",
+  "May Flower English School",
+  "Shams Urdu High School",
+  "Shree Jain Vidyalaya",
+  "St. Denis School",
+  "St. Micheal Academy",
 ];
 
 const SearchResult = () => {
