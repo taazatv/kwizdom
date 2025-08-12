@@ -102,10 +102,6 @@ const schoolNames = [
 "The Abacus Central School",
 "THE HERITAGE SCHOOL",
 "he Newtwon School",
-
-
-
-
 ];
 
 const SearchResult = () => {

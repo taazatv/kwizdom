@@ -100,7 +100,7 @@ const schoolNames = [
 "The Abacus Central School",
 "THE HERITAGE SCHOOL",
 "The Newtwon School",
-"Labonya Public School"
+
 ];
 
 const ChangeRequest = () => {
