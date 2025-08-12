@@ -101,7 +101,7 @@ const schoolNames = [
 "Tantia High School",
 "The Abacus Central School",
 "THE HERITAGE SCHOOL",
-"The Newtwon School",
+"he Newtwon School",
 
 
 
