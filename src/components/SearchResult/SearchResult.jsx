@@ -7,30 +7,7 @@ import { MyContext } from "../../store";
 import axios from "axios";
 
 const schoolNames = [
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
+  "ABHINAV  BHARTI SCHOOL",
 ];
 
 const SearchResult = () => {
