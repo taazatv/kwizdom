@@ -1,47 +1,80 @@
-
-
-
 import React from "react";
 import "./Header.css";
-
-
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const tickerItems = [
+    "RESULTS COMING SOON",
+    "KWIZDOM 4.0",
+    "THE ULTIMATE QUIZ COMPETITION",
+    "KWIZDOM 4.0",
+    "RESULTS COMING SOON",
+  ];
+
   return (
-    <>
-      <main className="head-container">
-        <div className="header">
-          <Link to="/search" style={{textDecoration:"none",color:"var(--color-white)"}}><h1>KWiZDoM</h1></Link>
+    <header className="head-container">
 
-          <div>
-            <p><a href="/">Home</a></p>
-            <p><Link to="/about">{window.innerWidth>500?"About Kwizdom":"About"}</Link></p>
-               
+      {/* ================= NAVBAR ================= */}
+      <div className="header">
+
+        <Link to="/search" className="header-logo">
+          KWiZDoM
+        </Link>
+
+        <nav className="header-nav">
+
+          <Link
+            to="/search"
+            className="header-link active"
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/about"
+            className="header-link"
+          >
+            <span className="desktop-about">
+              About Kwizdom
+            </span>
+
+            <span className="mobile-about">
+              About
+            </span>
+          </Link>
+
+          <a
+            href="https://taazatv.com/contact.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-link"
+          >
+            Contact Us
+          </a>
+
+        </nav>
+
+      </div>
 
 
-            {/* <p>About GRSE</p>  */}
-            <p><a href="https://taazatv.com/contact.php" target="_blank"> Contact Us</a></p>
+      {/* ================= RED TICKER ================= */}
+      <div className="kwizdom-ticker">
 
-            {/* <div>
-              <i class="bi bi-list"></i>
-            </div> */}
+        <div className="kwizdom-ticker-track">
 
-            {/* <div>
-            <i class="bi bi-search"></i>
-            </div> */}
-          </div>
+          {[...tickerItems, ...tickerItems].map(
+            (item, index) => (
+              <span key={index}>
+                • {item}
+              </span>
+            )
+          )}
+
         </div>
 
-        {/* Mobile Menu */}
+      </div>
 
-        {/* <div className="mobile-header">
-          <div>
-         
-          </div>
-        </div> */}
-      </main>
-    </>
+    </header>
   );
 };
 

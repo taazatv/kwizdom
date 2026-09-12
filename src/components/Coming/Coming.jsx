@@ -11,10 +11,10 @@ const Coming = () => {
         </div>
 
         <div>
-            <img src="/herologo.png" alt="" />
+            <img src="/herologo.jpeg" alt="" />
         </div>
         <div className='sponsor2'>
-            <img src="/logo2.png" alt="" />
+            <img src="/logo1.png" alt="" />
         </div>
     </main>
     </>

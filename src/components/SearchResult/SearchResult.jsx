@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import "./SearchResult.css";
 
 import { Combobox } from "@headlessui/react";
@@ -7,101 +7,30 @@ import { MyContext } from "../../store";
 import axios from "axios";
 
 const schoolNames = [
-  "Abhinav Bharti High School",
-  "Adamas International School",
-  "ADAMAS WORLD SCHOOL",
-  "Aditya Academy",
-  "Agrasain Balika Siksha Sadan",
-  "Alipore Takshal Vdiyapeeth",
-  "Anglo India High School",
-  "APEEJAY SCHOOL PARK STREET",
-  "ASIAN INTERNATIONAL SCHOOL",
-  "Balika Siksha Sadan",
-  "BDM International School",
-  "Bhavans Gangabux Kanoria Vidyamandir",
-  "Birla High School",
-  "Calcutta Anglo Gujrati School",
-  "Calcutta Boys School",
-  "Calcutta Public School Baguihati",
-  "Calcutta Public School Bidhan Park",
-  "Central Modern School",
-  "Dipti Bridgewell School",
-  "Don Bosco Liluah",
-  "Don Bosco Park Circus",
-  "DPS Howrah",
-  "DPS RUBY PARK",
-  "Evergreen High School",
-  "Frank Anthony Public School",
-  "Garulia Mill High School",
-  "Garulia Muncipal Girls High School",
-  "Garulia Shree Gaurishankar Jute Mills Hindu Vidyalaya",
-  "GD Birla",
-  "Grace Ling Liang English School",
-  "GYAN BHARTI BALIKA VIDYALAYA",
-  "GYAN BHARTI ENGLISH MEDIUM SCHOOL",
-  "GYAN BHARTI VIDYAPEETH",
-  "Harakh Chand Kankariya Jain Vidyalaya (Jagatdal)",
-  "Hariyana Vidya Mandir",
-  "Howrah Modern School",
-  "IP Memorial School",
-  "Jibreel International School",
-  "Kamla High School",
-  "Kankinara Arya Vidyalaya",
-  "Kankinara High School",
-  "Kankinara Urdu Girls High School",
-  "KHALSA ENGLISH HIGH SCHOOL",
-  "Khalsa Model SS",
-  "Khanna High School",
-  "La Martiniere for Boys",
-  "La Martiniere for Girls",
-  "Lajpat Balika Vidyalaya",
-  "Lajpat Hindi High school",
-  "Lalita Devi Balika Vidyalaya",
-  "Ling Liang High school",
-  "Loreto Day School Dharamtala",
-  "Mahavir Institute of Education and Research",
-  "Maheshwari Girls school",
-  "Marwari Balika Vidyalaya",
-  "May Flower English School",
-  "MC Kejriwal Vidyapeeth",
-  "Modern Academy Belur",
-  "Mp Birla F.H.S School",
-  "National English School",
-  "National English School VIP",
-  "NOPANY HIGH SCHOOL",
-  "SALT LAKE POINT SCHOOL",
-  "Saltlake Shikshaniketan",
-  "Scottish Church School",
-  "Seth Soorajmal Jalan Balika Vidyalaya",
-  "Sham Golden Academy",
-  "Shams Urdu High School",
-  "Shaw Public School",
-  "SHREE BALIKRISHNA VITHALNATH BALIKA VIDYALAYA",
-  "SHREE BALKRISHNA VITHALNATH VIDYALAYA",
-  "Shree Didoo Maheshwari Panchayat Vidyalaya",
-  "Shree Digamber Jain Vidyalaya",
-  "Shree Jain Howrah",
-  "Shree Jain Vidyalaya",
-  "SHREE MAHESHWARI VIDYALAYA",
-  "Shree Shikshayatan School",
-  "Shree Vishuddhanand Saraswati Vidyalaya",
-  "South Point High School",
-  "Sree Jain Swetamber Terapanthi Vidyalaya",
-  "Sri Hari Uchha Vidyalya",
-  "Sri Sri Academy",
-  "St. Andrews Public School MG Road",
-  "St. Augustine Day School",
-  "St. Denis School",
-  "St. Josephs College",
-  "St. Micheal Academy",
-  "St. Pauls Boarding Day School",
-  "ST. XAVIERS COLLEGIATE SCHOOL",
-  "Starling International School",
-  "Sunrise English Medium School",
-  "Tantia High School",
-  "The Abacus Central School",
-  "THE HERITAGE SCHOOL",
-  "he Newtwon School",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
+  "KWIZDOM 4.0",
 ];
 
 const SearchResult = () => {
@@ -110,22 +39,43 @@ const SearchResult = () => {
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [SchoolName, setSchoolName] = useState("");
   const [query, setQuery] = useState("");
-
-  const filteredSchool =
-    query === ""
-      ? schoolNames
-      : schoolNames.filter((schoolName) => {
-          return schoolName
-            .toLocaleLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLocaleLowerCase().replace(/\s+/g, ""));
-        });
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
+  const uniqueSchools = useMemo(
+    () => [...new Set(schoolNames)],
+    []
+  );
+
+  const filteredSchool =
+    query === ""
+      ? uniqueSchools
+      : uniqueSchools.filter((schoolName) =>
+          schoolName
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(
+              query.toLowerCase().replace(/\s+/g, "")
+            )
+        );
+
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    if (!SchoolName) {
+      alert("Please select your school name.");
+      return;
+    }
+
+    if (!PhoneNumber || PhoneNumber.length !== 10) {
+      alert("Please enter a valid 10 digit mobile number.");
+      return;
+    }
+
     try {
+      setLoading(true);
+
       const { data } = await axios.post(
         "https://kwizdom2-0-backend.onrender.com/api/search",
         {
@@ -133,200 +83,308 @@ const SearchResult = () => {
           PhoneNumber,
         }
       );
+
       setStudentData(data);
-      if (data._id != undefined) navigate("/certificate");
+
+      if (data?._id) {
+        navigate("/certificate");
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Search error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <>
-      <main className="search-result-container">
-        <marquee className="ticker">
-          <span> PUBLISHED RESULT OF SCHOOL </span>
-          {schoolNames.map((schoolName) => (
-            <span key={schoolName}> • {schoolName}</span>
-          ))}
-        </marquee>
-        <div className="search-result">
-          <div className="left">
-            <div className="hero-logo">
-              <img src="/toplogo.jpg" alt="toplogo" />
+    <div className="kwizdom-page">
+
+      <main className="kwizdom-main">
+
+        <section className="kwizdom-content">
+
+          {/* ================= LEFT ================= */}
+
+          <div className="result-panel">
+
+            <div className="event-banner">
+              <img
+                src="/toplogo.jpeg"
+                alt="Kwizdom 2026"
+              />
             </div>
 
-            <p>Enter all the necessary info and Get your result.</p>
+            <div className="result-heading">
 
-            <form className="form">
-              <Combobox value={SchoolName} onChange={setSchoolName}>
-                <Combobox.Input
-                  onChange={(event) => setQuery(event.target.value)}
-                  className="combo-input"
-                  autoComplete="off"
-                  placeholder="School Names"
-                />
-                <Combobox.Options className="combo">
-                  {filteredSchool.length > 0 ? (
-                    filteredSchool.map((school) => (
-                      <Combobox.Option
-                        key={school}
-                        value={school}
-                        className="option"
-                      >
-                        {({ active }) => (
-                          <div className={`${active ? "bg-green" : "bg-gray"}`}>
-                            {school}
-                          </div>
-                        )}
-                      </Combobox.Option>
-                    ))
-                  ) : (
-                    <div style={{ fontSize: "var(--tertiary-font)" }}>
-                      School name not on list? Results will be updated shortly
-                    </div>
-                  )}
-                </Combobox.Options>
-              </Combobox>
+              <span>KWIZDOM 4.0</span>
 
-              <input
-                type="number"
-                placeholder="Mobile Number"
-                value={PhoneNumber}
-                onChange={(e) =>
-                  setPhoneNumber(
-                    Number(e.target.value.toString().substring(0, 10)) || ""
-                  )
-                }
-              />
+              <h1>Check Your Result</h1>
 
-              <div style={{ fontWeight: "bold", fontStyle: "italic" }}>
-                *Please note that if the student has not filled the OMR sheet
-                properly, the results will not be published.
+              <p>
+                Enter the required information to check your result.
+              </p>
+
+            </div>
+
+            <form
+              className="result-form"
+              onSubmit={submitHandler}
+            >
+
+              {/* SCHOOL */}
+
+              <div className="form-group">
+
+                <label>School Name</label>
+
+                <Combobox
+                  value={SchoolName}
+                  onChange={setSchoolName}
+                >
+
+                  <div className="combobox-wrapper">
+
+                    <Combobox.Input
+                      className="combo-input"
+                      onChange={(event) =>
+                        setQuery(event.target.value)
+                      }
+                      autoComplete="off"
+                      placeholder="Search or select your school"
+                    />
+
+                    <Combobox.Options className="combo">
+
+                      {filteredSchool.length > 0 ? (
+                        filteredSchool.map((school, index) => (
+
+                          <Combobox.Option
+                            key={`${school}-${index}`}
+                            value={school}
+                            className="option"
+                          >
+
+                            {({ active }) => (
+                              <div
+                                className={
+                                  active
+                                    ? "option-active"
+                                    : "option-normal"
+                                }
+                              >
+                                {school}
+                              </div>
+                            )}
+
+                          </Combobox.Option>
+
+                        ))
+                      ) : (
+
+                        <div className="no-school">
+                          School name not on list?
+                          Results will be updated shortly.
+                        </div>
+
+                      )}
+
+                    </Combobox.Options>
+
+                  </div>
+
+                </Combobox>
+
               </div>
 
-              <p style={{ color: "red", textAlign: "left", width: "100%" }}>
-                {studentData.message && "*No Data Found *"}
-              </p>
-              <button onClick={submitHandler}>Get your Result</button>
+
+              {/* MOBILE */}
+
+              <div className="form-group">
+
+                <label>Mobile Number</label>
+
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  maxLength="10"
+                  placeholder="Enter 10 digit mobile number"
+                  value={PhoneNumber}
+                  onChange={(e) => {
+                    const value = e.target.value
+                      .replace(/\D/g, "")
+                      .slice(0, 10);
+
+                    setPhoneNumber(value);
+                  }}
+                />
+
+              </div>
+
+
+              {/* NOTE */}
+
+              <div className="result-note">
+                * Please note that if the student has not filled the
+                OMR sheet properly, the results will not be published.
+              </div>
+
+
+              {/* ERROR */}
+
+              {studentData?.message && (
+                <div className="result-error">
+                  No data found. Please check your details.
+                </div>
+              )}
+
+
+              {/* BUTTON */}
+
+              <button
+                type="submit"
+                className="result-button"
+                disabled={loading}
+              >
+                {loading
+                  ? "Checking..."
+                  : "Get Your Result"}
+              </button>
+
+
+              {/* FORGOT */}
 
               <Link
                 to="/forgot"
-                style={{ color: "black", textDecoration: "none" }}
-                className="redbutton"
+                className="cannot-find"
               >
-                <p>Can't find your name ?</p>
+                Can't find your name?
               </Link>
 
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src="/herologo2.png"
-                  alt="sponsor"
-                  style={{
-                    width: "12rem",
-                    height: "auto",
-                    marginTop: "20px",
-                  }}
-                />
-              </div>
             </form>
+
           </div>
 
-          <div className="right">
-            <div className="hero-img">
-              <img src="/hero.png" alt="" />
-            </div>
-          </div>
 
-          <div className="lower-div">
-            <div className="inner-lower-div">
-              <p>Platinum Sponsors</p>
-              <div>
-                <div>
-                  <img src="/herologo3.png" alt="" />
-                </div>
-                <div>
-                  <img src="/herologo4.png" alt="" />
-                </div>
-                <div>
-                  <img src="/herologo5.png" alt="" />
-                </div>
+          {/* ================= RIGHT ================= */}
+
+          <div className="visual-panel">
+
+            <div className="visual-content">
+
+              <div className="visual-badge">
+                KWIZDOM 4.0
               </div>
+
+              <h2>
+                Think.
+                <br />
+                Discover.
+                <br />
+                Win.
+              </h2>
+
+              <p>
+                The ultimate quiz competition
+              </p>
+
+              <img
+                src="/hero.png"
+                alt="Kwizdom"
+                className="hero-character"
+              />
+
             </div>
-          </div>
-        </div>
-      </main>
-      <div className="bar-line" />
-      <div className="bar-line-2">
-        <div className="inner-bar">
-          <div>
-            <p>Follow Us on</p>
-            <span>
-              <a
-                className="link"
-                href="https://www.facebook.com/taazabengal"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-facebook"></i>
-              </a>
-            </span>
-            <span>
-              <a
-                className="link"
-                href="https://x.com/taazatv"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-twitter-x"></i>
-              </a>
-            </span>
-            <span>
-              <a
-                className="link"
-                href="https://www.instagram.com/taazatvchannel/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-instagram"></i>
-              </a>
-            </span>
-            <span>
-              <a
-                className="link"
-                href="https://www.youtube.com/@taazatv1632"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-youtube"></i>
-              </a>
-            </span>
-            <p>Taaza Tv</p>
-            <p>To Watch Taaza Tv live download the mobile App</p>
+
           </div>
 
-          <div>
-            <div>
-              <img src="/googleplay.webp" alt="Google Play" />
-            </div>
-            <div>
-              <img src="/appstore.png" alt="App Store" />
-            </div>
+        </section>
+
+      </main>
+
+
+      {/* ================= FOOTER ================= */}
+
+      <footer className="kwizdom-footer">
+
+        <div className="footer-top">
+
+          <div className="footer-social">
+
+            <span className="follow-text">
+              Follow Us
+            </span>
+
+            <a
+              href="https://www.facebook.com/taazabengal"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-facebook"></i>
+            </a>
+
+            <a
+              href="https://x.com/taazatv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-twitter-x"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/taazatvchannel/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-instagram"></i>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@taazatv1632"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-youtube"></i>
+            </a>
+
           </div>
+
+
+          <div className="footer-brand">
+
+            <strong>Taaza TV</strong>
+
+            <span>
+              To watch Taaza TV live, download the mobile app
+            </span>
+
+          </div>
+
+
+          <div className="app-links">
+
+            <img
+              src="/googleplay.webp"
+              alt="Google Play"
+            />
+
+            <img
+              src="/appstore.png"
+              alt="App Store"
+            />
+
+          </div>
+
         </div>
-      </div>
-      <div className="bar-line-3">
-        <p>
-          Taaza TV is available on Hathway (214), GTPL (213) also on JIO TV /
-          Daily Hunt.
-        </p>
-      </div>
-    </>
+
+
+        <div className="footer-bottom">
+          Taaza TV is available on Hathway (214), GTPL (213),
+          JIO TV / Daily Hunt.
+        </div>
+
+      </footer>
+
+    </div>
   );
 };
 
