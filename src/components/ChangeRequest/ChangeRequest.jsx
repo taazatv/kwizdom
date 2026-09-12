@@ -5,138 +5,289 @@ import { useParams } from "react-router-dom";
 import { Combobox } from "@headlessui/react";
 
 const schoolNames = [
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0",
-  "KWIZDOM 4.0"
+  "Abhinav Bharti High School",
 ];
 
 const ChangeRequest = () => {
   const { id } = useParams();
 
-  const [newData, setNewData] = useState({});
-
-  const [message, setMessage] = useState("");
   const [requestedName, setRequestedName] = useState("");
   const [requestedSchoolName, setRequestedSchoolName] = useState("");
   const [query, setQuery] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const filteredSchool =
     query === ""
       ? schoolNames
-      : schoolNames.filter((schoolName) => {
-          return schoolName
-            .toLocaleLowerCase()
+      : schoolNames.filter((schoolName) =>
+          schoolName
+            .toLowerCase()
             .replace(/\s+/g, "")
-            .includes(query.toLocaleLowerCase().replace(/\s+/g, ""));
-        });
-
-  console.log(newData);
-  console.log(requestedSchoolName);
+            .includes(
+              query.toLowerCase().replace(/\s+/g, "")
+            )
+        );
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    setMessage("Request has been sent...");
 
-    // Clear the message after 3 seconds (3000 milliseconds)
-    const { data } = await axios.put(
-      `https://kwizdom2-0-backend.onrender.com/api/${id}/new`,
-      { requestedName, requestedSchoolName }
-    );
-    setNewData(data);
-    setTimeout(() => {
+    if (!requestedName || !requestedSchoolName) {
+      setMessage("Please fill in all the fields.");
+      return;
+    }
+
+    try {
+      setLoading(true);
       setMessage("");
-    }, 3000);
 
-    setMessage("");
-    setRequestedName("");
-    setRequestedSchoolName("");
+      await axios.put(
+        `https://kwizdom2-0-backend.onrender.com/api/${id}/new`,
+        {
+          requestedName,
+          requestedSchoolName,
+        }
+      );
+
+      setMessage("Correction request sent successfully.");
+
+      setRequestedName("");
+      setRequestedSchoolName("");
+      setQuery("");
+
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
+    } catch (error) {
+      console.error("Request error:", error);
+      setMessage("Unable to send request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
-  return (
-    <main className="request_box">
-      <div className="request">
-        <div>
-          <img src="/toplogo.jpg" alt="" />
-        </div>
 
-        <form>
-          <h1>Edit</h1>
-          <div>
-            <label>Student Name</label>
-            <input
-              type="text"
-              placeholder="Enter Your Name"
-              value={requestedName}
-              onChange={(e) => setRequestedName(e.target.value)}
+  return (
+    <main className="request-page">
+
+      <section className="request-container">
+
+        {/* LEFT SIDE */}
+
+        <div className="request-left">
+
+          <div className="request-heading">
+            <span>KWIZDOM 4.0</span>
+
+            <h1>Correction Request</h1>
+
+            <p>
+              Need to correct your name or school name?
+              Submit the correct details below.
+            </p>
+          </div>
+
+
+          {/* EVENT IMAGE */}
+
+          <div className="request-banner">
+            <img
+              src="/toplogo.jpeg"
+              alt="Kwizdom 4.0"
             />
           </div>
 
-          <div>
-            <label>School Name</label>
-            <Combobox
-              value={requestedSchoolName}
-              onChange={setRequestedSchoolName}
-            >
-              <Combobox.Input
-                onChange={(event) => setQuery(event.target.value)}
-                className="combo-input"
-                autoComplete="off"
-                placeholder="School Names"
-              />
 
-              <Combobox.Options className="combo2">
-                {filteredSchool.length > 0 ? (
-                  filteredSchool.slice(0, 8).map((school) => (
-                    <Combobox.Option
-                      key={school}
-                      value={school}
-                      className="option"
-                    >
-                      {({ active, selected }) => (
-                        <div className={`${active ? "bg-green" : "bg-gray"}`}>
-                          {school}
+          {/* FORM */}
+
+          <div className="request-card">
+
+            <div className="card-heading">
+              <h2>Edit Details</h2>
+
+              <p>
+                Enter the information exactly as it should
+                appear on your result.
+              </p>
+            </div>
+
+            <form onSubmit={submitHandler}>
+
+              {/* STUDENT NAME */}
+
+              <div className="form-group">
+
+                <label htmlFor="studentName">
+                  Student Name
+                </label>
+
+                <input
+                  id="studentName"
+                  type="text"
+                  placeholder="Enter your correct name"
+                  value={requestedName}
+                  onChange={(e) =>
+                    setRequestedName(e.target.value)
+                  }
+                />
+
+              </div>
+
+
+              {/* SCHOOL NAME */}
+
+              <div className="form-group">
+
+                <label>
+                  School Name
+                </label>
+
+                <Combobox
+                  value={requestedSchoolName}
+                  onChange={setRequestedSchoolName}
+                >
+
+                  <div className="school-wrapper">
+
+                    <Combobox.Input
+                      className="school-input"
+                      autoComplete="off"
+                      placeholder="Search or select your school"
+                      onChange={(e) =>
+                        setQuery(e.target.value)
+                      }
+                    />
+
+                    <Combobox.Options className="school-options">
+
+                      {filteredSchool.length > 0 ? (
+                        filteredSchool.map((school) => (
+
+                          <Combobox.Option
+                            key={school}
+                            value={school}
+                            className="school-option"
+                          >
+                            {({ active }) => (
+                              <div
+                                className={
+                                  active
+                                    ? "school-option-active"
+                                    : ""
+                                }
+                              >
+                                {school}
+                              </div>
+                            )}
+                          </Combobox.Option>
+
+                        ))
+                      ) : (
+                        <div className="no-school">
+                          No school found
                         </div>
                       )}
-                    </Combobox.Option>
-                  ))
-                ) : (
-                  <div style={{ fontSize: "var(--tertiary-font)" }}>
-                    No SchoolName present
+
+                    </Combobox.Options>
+
                   </div>
-                )}
-              </Combobox.Options>
-            </Combobox>
+
+                </Combobox>
+
+              </div>
+
+
+              {/* NOTE */}
+
+              <div className="request-note">
+                <span>i</span>
+
+                <p>
+                  Please make sure the information entered
+                  above is accurate before submitting.
+                </p>
+              </div>
+
+
+              {/* BUTTON */}
+
+              <button
+                type="submit"
+                className="submit-button"
+                disabled={loading}
+              >
+                {loading
+                  ? "Sending..."
+                  : "Send Correction Request"}
+              </button>
+
+
+              {/* MESSAGE */}
+
+              {message && (
+                <div className="request-message">
+                  {message}
+                </div>
+              )}
+
+            </form>
+
           </div>
 
-          <button onClick={submitHandler}>Send Request</button>
-
-          {message && <p className="success">{message}</p>}
-        </form>
-      </div>
-
-      <div>
-        <img src="/edit.png" alt="" />
-      </div>
-
-      <div className="social-visible">
-        <div className="social-links-cg">
-          <div>
-            <img src="/wa.png" alt="" />
-          </div>
-          <div>
-            <img src="/insta.png" alt="" />
-          </div>
-          <div>
-            <img src="/fb.png" alt="" />
-          </div>
-          <div>
-            <img src="/yt.png" alt="" />
-          </div>
         </div>
-      </div>
+
+
+        {/* RIGHT SIDE */}
+
+        <div className="request-visual">
+
+          <div className="visual-content">
+
+            <span>STUDENT SUPPORT</span>
+
+            <h2>
+              Keep your
+              <br />
+              details
+              <strong> accurate.</strong>
+            </h2>
+
+            <p>
+              Make sure your student information is correct
+              so your result and certificate carry the right
+              details.
+            </p>
+
+            <div className="visual-list">
+
+              <div>
+                <b>01</b>
+                <span>Enter your correct name</span>
+              </div>
+
+              <div>
+                <b>02</b>
+                <span>Select your school</span>
+              </div>
+
+              <div>
+                <b>03</b>
+                <span>Submit your request</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <img
+            src="/edit.png"
+            alt="Student correction"
+            className="edit-image"
+          />
+
+        </div>
+
+      </section>
+
     </main>
   );
 };

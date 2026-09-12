@@ -1,284 +1,1376 @@
-@keyframes blink {
-    0%{
-        opacity:0.5;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0.5;
-    }
+/* =========================================================
+   KWIZDOM 4.0
+   CORPORATE RESULT + CERTIFICATE PAGE
+   ========================================================= */
 
+* {
+  box-sizing: border-box;
 }
 
-.blink{
-    animation-name: blink;
-    animation-iteration-count: infinite;
-    animation-duration: 1s;
-    color:blue;
-}
-
-
-
+html,
+body,
 #root {
-    overflow-y: hidden;
-    max-height: 100vh;
-} 
- 
- .certify-box{
-    background-image: url("/bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
-.certify{
-    width: 85%;
-    margin: auto;
-    padding: 20px;
+body {
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background: #f4f7fb;
+
+  color: #172b4d;
+
+  overflow-x: hidden;
 }
 
-.certify h1{
-    text-align: center;
-    color:var(--h1-color);
-    margin-bottom: 30px;
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.certify-box {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(35, 77, 145, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #f4f7fb 0%,
+      #ffffff 48%,
+      #f3f6fa 100%
+    );
 }
 
-.certify .details {
-    width: fit-content;
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.certify {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1380px, 94%);
+
+  margin: 0 auto;
+
+  padding: 30px 0 55px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    470px;
+
+  grid-template-areas:
+    "header header"
+    "result certificate";
+
+  gap: 30px 75px;
+
+  align-items: start;
 }
 
-.certify .details p {
-    font-size: 2rem;
-    font-weight: 800;
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.certificate-header {
+  grid-area: header;
+
+  padding-bottom: 2px;
 }
 
-.certify > div:nth-child(3){
+
+.certificate-kicker {
+  display: block;
+
+  color: #f28a18;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.4px;
+
+  margin-bottom: 5px;
+}
+
+
+.certificate-header h1 {
+  margin: 0;
+
+  color: #173f7b;
+
+  font-size: clamp(
+    32px,
+    3vw,
+    44px
+  );
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1.2px;
+}
+
+
+.certificate-header p {
+  margin: 7px 0 0;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+.certificate-header::after {
+  content: "";
+
+  display: block;
+
+  width: 54px;
+
+  height: 4px;
+
+  margin-top: 15px;
+
+  border-radius: 20px;
+
+  background: #f28a18;
+}
+
+
+/* =========================================================
+   RESULT COLUMN
+   ========================================================= */
+
+.result-column {
+  grid-area: result;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   STUDENT CARD
+   ========================================================= */
+
+.student-details-card {
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #d9e2ee;
+
+  border-left: 5px solid #28549a;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 30px rgba(
+      28,
+      57,
+      95,
+      0.07
+    );
+
+  overflow: hidden;
+}
+
+
+/* card heading */
+
+.card-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 25px 15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7faff,
+      #ffffff
+    );
+
+  border-bottom: 1px solid #e4eaf1;
+}
+
+
+.card-heading span {
+  color: #f28a18;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+}
+
+
+.card-heading h2 {
+  margin: 3px 0 0;
+
+  color: #193f7b;
+
+  font-size: 17px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+/* result badge */
+
+.verified-badge {
+  flex-shrink: 0;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  background: #28549a;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DETAIL ROW
+   ========================================================= */
+
+.student-detail {
+  min-height: 57px;
+
+  padding: 0 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #e7ecf2;
+}
+
+
+.student-detail.last-detail {
+  border-bottom: none;
+}
+
+
+.detail-label {
+  flex-shrink: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.detail-value {
+  max-width: 68%;
+
+  color: #1c4380;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+}
+
+
+.grade-value {
+  color: #f28a18;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.certificate-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 20px 0 25px;
+}
+
+
+.certificate-actions button {
+  height: 43px;
+
+  border-radius: 7px;
+
+  padding: 0 17px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* correction */
+
+.correction-link {
+  display: block;
+
+  text-decoration: none;
+}
+
+
+.correction-link button {
+  color: #244b8f;
+
+  background: #ffffff;
+
+  border: 1px solid #d4dfed;
+}
+
+
+.correction-link button:hover {
+  border-color: #28549a;
+
+  background: #f7faff;
+}
+
+
+/* download */
+
+.download-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  background: #28549a;
+
+  border: 1px solid #28549a;
+
+  box-shadow:
+    0 7px 17px rgba(
+      40,
+      84,
+      154,
+      0.20
+    );
+}
+
+
+.download-button:hover {
+  background: #1c407b;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 20px rgba(
+      40,
+      84,
+      154,
+      0.24
+    );
+}
+
+
+.download-icon {
+  font-size: 15px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   GRADE SECTION
+   ========================================================= */
+
+.grade-section {
+  width: 100%;
+}
+
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 11px;
+}
+
+
+.heading-line {
+  width: 4px;
+
+  height: 29px;
+
+  flex-shrink: 0;
+
+  border-radius: 5px;
+
+  background: #f28a18;
+}
+
+
+.section-heading span {
+  display: block;
+
+  color: #f28a18;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.section-heading h2 {
+  margin: 2px 0 0;
+
+  color: #193f7b;
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+
+/* grade image container */
+
+.grade-card {
+  display: inline-block;
+
+  max-width: 100%;
+
+  padding: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #d7e0eb;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 7px 18px rgba(
+      28,
+      57,
+      95,
+      0.06
+    );
+}
+
+
+.grade-image {
+  display: block;
+
+  width: 390px;
+
+  max-width: 100%;
+
+  height: auto;
+}
+
+
+/* =========================================================
+   CERTIFICATE COLUMN
+   ========================================================= */
+
+.certificate-column {
+  grid-area: certificate;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding-top: 2px;
+}
+
+
+/* certificate heading */
+
+.certificate-heading {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 13px;
+}
+
+
+.certificate-heading span {
+  display: block;
+
+  color: #f28a18;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.certificate-heading h2 {
+  margin: 3px 0 0;
+
+  color: #193f7b;
+
+  font-size: 16px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+.certificate-status {
+  flex-shrink: 0;
+
+  color: #3d8f48;
+
+  background: #edf8ef;
+
+  border: 1px solid #cfe9d3;
+
+  border-radius: 20px;
+
+  padding: 6px 10px;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CERTIFICATE WRAPPER
+   ========================================================= */
+
+.certificate-section {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+
+/* =========================================================
+   ACTUAL CERTIFICATE
+   ========================================================= */
+
+.certificate {
+  position: relative;
+
+  width: 420px;
+
+  height: calc(420px * 545 / 385);
+
+  max-width: 100%;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #d7e0eb;
+
+  box-shadow:
+    0 20px 45px rgba(
+      26,
+      53,
+      90,
+      0.17
+    );
+}
+
+
+/* certificate background */
+
+.certificate-bg {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  object-fit: fill;
+}
+
+
+/* =========================================================
+   CERTIFICATE NAME
+
+   The certificate is 420px wide.
+
+   The name is placed ABOVE the printed line.
+   ========================================================= */
+
+.certificate-name {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 9%;
+
+  top: 57.6%;
+
+  width: 82%;
+
+  padding: 0 5px;
+
+  color: #244b8f;
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CERTIFICATE SCHOOL
+
+   This sits BELOW the horizontal line.
+   ========================================================= */
+
+.certificate-school {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 9%;
+
+  top: 62.1%;
+
+  width: 82%;
+
+  padding: 0 5px;
+
+  color: #244b8f;
+
+  font-family:
+    "Poppins",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   WATERMARK
+   ========================================================= */
+
+#watermark {
+  position: fixed;
+
+  z-index: 0;
+
+  left: 50%;
+
+  top: 53%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width: 100%;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  text-align: center;
+
+  color: #28549a;
+
+  opacity: 0.035;
+
+  font-size: clamp(
+    100px,
+    15vw,
+    220px
+  );
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+  .certify {
+    width: 94%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      420px;
+
+    column-gap: 45px;
+  }
+
+
+  .certificate {
+    width: 390px;
+
+    height: calc(390px * 545 / 385);
+  }
+
+
+  .certificate-name {
+    font-size: 16px;
+  }
+
+
+  .certificate-school {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .certify {
+    width: 92%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      360px;
+
+    column-gap: 30px;
+  }
+
+
+  .certificate {
+    width: 350px;
+
+    height: calc(350px * 545 / 385);
+  }
+
+
+  .certificate-name {
+    font-size: 14px;
+  }
+
+
+  .certificate-school {
+    font-size: 13px;
+  }
+
+
+  .student-detail {
+    padding-left: 19px;
+
+    padding-right: 19px;
+  }
+
+
+  .card-heading {
+    padding-left: 19px;
+
+    padding-right: 19px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  #root {
+    overflow-x: hidden;
+
+    overflow-y: auto;
+  }
+
+
+  .certify-box {
+    overflow: visible;
+
+    min-height: 100vh;
+  }
+
+
+  .certify {
+    width: min(92%, 600px);
+
+    padding: 22px 0 45px;
+
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
+
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+
+  /* -------------------------
+     HEADER
+  -------------------------- */
+
+  .certificate-header {
     margin-bottom: 20px;
-}
+  }
 
-.certify > div:nth-child(3) button:nth-child(1){
-    background-color: var(--button-bg-color-2);
-    border-radius: 20px;
-    padding: 5px 12px;
-    border:none;
-    cursor: pointer;
-    color: var(--button-bg-color);
-    font-weight: 500;
-}
 
-.certify > div:nth-child(3) button:nth-child(2){
-    
-    background-color: var(--button-bg-color-3);
-    border-radius: 20px;
-    padding: 9px 20px;
-    border: none;
-    cursor: pointer;
-    color: var(--color-white);
-    font: 500;
-    position: absolute;
-    top: 17%;
-    right: 20rem;
-}
+  .certificate-header h1 {
+    font-size: 30px;
 
-.certify .image{
-    width: 385px;
-    height: 545px;
-    /* background-image: url(/certificate.png); */
-    /* background-size:/ contain; */
-    /* background-repeat: no-repeat; */
-    position: fixed;
-    right: 8rem;
-    top: 25%;
-    aspect-ratio: 9 / 16;
-}
+    letter-spacing: -0.7px;
+  }
 
-.certify .image h1{
+
+  .certificate-header p {
+    font-size: 12px;
+  }
+
+
+  /* -------------------------
+     DETAILS
+  -------------------------- */
+
+  .student-details-card {
+    border-left-width: 4px;
+
+    border-radius: 10px;
+  }
+
+
+  .card-heading {
+    padding: 15px 16px 13px;
+  }
+
+
+  .card-heading h2 {
+    font-size: 15px;
+  }
+
+
+  .student-detail {
+    min-height: 54px;
+
+    padding:
+      0 16px;
+
+    gap: 15px;
+  }
+
+
+  .detail-label {
+    font-size: 11px;
+  }
+
+
+  .detail-value {
+    max-width: 62%;
+
+    font-size: 12px;
+  }
+
+
+  .grade-value {
+    font-size: 15px;
+  }
+
+
+  /* -------------------------
+     ACTIONS
+  -------------------------- */
+
+  .certificate-actions {
     width: 100%;
-    top: 306px;
-    right: 10rem;
-    transform: translateX(10rem);
-    position: absolute;
-    text-align: center;
-    font-weight: 800;    /* font-size: calc(var(--primary-font)*2); */
-}
-.social-visible{
-    display: none !important;
-}
- .social-links-certify{
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
-    justify-content: center;
-} 
 
- .text{
-    visibility: hidden;
-}
+    margin:
+      16px 0
+      23px;
 
-.details{
-    margin-top:1rem;
-    border: 2px solid black;
-    width: fit-content;
-    padding: 2rem;
-    border-radius: 0.5rem;
-}
-
-#watermark{
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 27rem;
-    width: 100vw;
-    text-align: center;
-    font-weight: 900;
-    opacity: 0.2;
-    pointer-events: none;
-
-}
+    gap: 8px;
+  }
 
 
-@media(max-width:300px){
-    .certify h1{
-        font-size: large;
-    }
-    .certify > p{
-        font-size: medium;
-    }
-    .certify .image{
-        height: 82vh;
-        margin-bottom: 0px;
-    }
+  .certificate-actions button {
+    height: 42px;
 
-    .certify div{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-    }
-    .social-visible{
-        display: block !important;
-    }
-    .social-links-certify{
-        display: flex;
-        flex-direction: row !important;
-        align-items: center;
-        justify-content: center;
-    }
-}
+    padding:
+      0 12px;
 
-@media((min-width:300px) and (max-width:768px)){
-    .certify h1{
-        font-size: 17px;
-        margin-top: -8px;
-    }
-
-    .certify .details {
-        margin-top: -3rem;
-        padding: 0.25rem
-    }
-    .certify .details p {
-        font-size: 10px !important;
-        margin-top: -15px;
-    }
-
-    .certify .details p:nth-child(1) {
-        margin-top: 0;
-    }
-    
-    .certify .image{
-        width: 175px !important;
-        height: 247.562px !important;
-        position: absolute;
-        transform: translateY(0vh);
-        top: 370px;
-        left: 10rem;
-        margin: 0;
-    }
-
-    
-
-    .certify div{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        width: 70vw !important;
-        /* margin-left: 10rem; */
-    }
-    .social-visible{
-        display: block !important;
-    }
-    .social-links-certify{
-        display: flex;
-        flex-direction: row !important;
-        align-items: center;
-        justify-content: center;
-    }
-    .herologo{
-        display: none;
-    }
+    font-size: 10px;
+  }
 
 
-    .certify > div:nth-child(3) button:nth-child(2){
-    top: 323px;
-    
-    left: 12rem;
-    right: auto;
-    }
+  /* -------------------------
+     GRADE
+  -------------------------- */
+
+  .grade-section {
+    width: 100%;
+  }
 
 
-    .certify .image:nth-child(1) {
-        transform: translateY(-124px) translateX(-18px)!important;
-    }
-
-    .certify .image h1{
-        font-size: 8px;
-        position: absolute;
-        top: 142px;
-        width: 175px;
-        margin: 0;
-        left: -10rem;
-    }
+  .section-heading {
+    margin-bottom: 10px;
+  }
 
 
-    .certify .image h1:nth-child(2) {
-        top: 153px;
-        left: 0rem;
-        transform: translateY(0px) translateX(0px) !important;
-    }
-    .certify > div:nth-child(4) button:nth-child(1){
-        margin-left: -9rem;
-    }
+  .section-heading h2 {
+    font-size: 16px;
+  }
 
-    .certify > p {
-        margin-top: -10px;
-    }
 
-    .certify > img {
-        margin-top: -5px;
-        width: 200px!important;
- 
-    }
-    .certify .image img{
-        width:175px!important;
-        height:auto!important;
-       
-    }
+  .grade-card {
+    width: 100%;
 
-    .form ul{
-        top:200px;
-    }
+    max-width: 390px;
+  }
 
-#watermark{
+
+  .grade-image {
+    width: 100%;
+  }
+
+
+  /* -------------------------
+     CERTIFICATE
+  -------------------------- */
+
+  .certificate-column {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding-top: 0;
+  }
+
+
+  .certificate-heading {
+    width: 100%;
+
+    margin-bottom: 12px;
+  }
+
+
+  .certificate-heading h2 {
+    font-size: 15px;
+  }
+
+
+  .certificate {
+    width: min(
+      88vw,
+      385px
+    );
+
+    height: auto;
+
+    aspect-ratio:
+      385 / 545;
+  }
+
+
+  .certificate-name {
+    top: 57.6%;
+
+    font-size: clamp(
+      10px,
+      3.8vw,
+      16px
+    );
+  }
+
+
+  .certificate-school {
+    top: 62.1%;
+
+    font-size: clamp(
+      9px,
+      3.5vw,
+      15px
+    );
+  }
+
+
+  /* watermark */
+
+  #watermark {
     display: none;
+  }
 }
 
-} 
 
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .certify {
+    width: 92%;
+
+    padding-top: 18px;
+  }
+
+
+  .certificate-header h1 {
+    font-size: 26px;
+  }
+
+
+  .certificate-header p {
+    font-size: 11px;
+  }
+
+
+  .certificate-kicker {
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+  }
+
+
+  .card-heading {
+    padding:
+      13px 13px
+      11px;
+  }
+
+
+  .card-heading h2 {
+    font-size: 14px;
+  }
+
+
+  .verified-badge {
+    padding:
+      5px 8px;
+
+    font-size: 7px;
+  }
+
+
+  .student-detail {
+    min-height: 51px;
+
+    padding:
+      0 13px;
+  }
+
+
+  .detail-label {
+    font-size: 10px;
+  }
+
+
+  .detail-value {
+    max-width: 60%;
+
+    font-size: 11px;
+  }
+
+
+  .grade-value {
+    font-size: 14px;
+  }
+
+
+  /* buttons become equal width */
+
+  .certificate-actions {
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 7px;
+  }
+
+
+  .correction-link,
+  .correction-link button,
+  .download-button {
+    width: 100%;
+  }
+
+
+  .certificate-actions button {
+    width: 100%;
+
+    padding:
+      0 7px;
+
+    font-size: 9px;
+  }
+
+
+  .download-icon {
+    font-size: 13px;
+  }
+
+
+  .certificate-column {
+    margin-top: 24px;
+  }
+
+
+  .certificate-heading {
+    align-items: flex-start;
+  }
+
+
+  .certificate-heading h2 {
+    font-size: 13px;
+  }
+
+
+  .certificate-status {
+    padding:
+      5px 7px;
+
+    font-size: 6px;
+  }
+
+
+  .certificate {
+    width: 90vw;
+
+    max-width: 385px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+  .certificate-header h1 {
+    font-size: 23px;
+  }
+
+
+  .student-detail {
+    gap: 8px;
+  }
+
+
+  .detail-value {
+    font-size: 10px;
+  }
+
+
+  .certificate-actions button {
+    font-size: 8px;
+  }
+
+
+  .certificate-name {
+    font-size: 9px;
+  }
+
+
+  .certificate-school {
+    font-size: 8.5px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .certify {
+    width: 94%;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      320px;
+
+    grid-template-areas:
+      "header header"
+      "result certificate";
+
+    column-gap: 25px;
+  }
+
+
+  .certificate-column {
+    margin-top: 0;
+  }
+
+
+  .certificate {
+    width: 300px;
+
+    height: calc(300px * 545 / 385);
+  }
+
+
+  .certificate-name {
+    font-size: 11px;
+  }
+
+
+  .certificate-school {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+  body {
+    background: #ffffff;
+  }
+
+
+  .certify-box {
+    background: #ffffff;
+  }
+
+
+  .certificate {
+    box-shadow: none;
+
+    border: none;
+  }
+
+
+  #watermark {
+    display: none;
+  }
+}

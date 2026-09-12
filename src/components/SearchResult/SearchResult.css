@@ -1,102 +1,114 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 #root {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
 .kwizdom-page {
   width: 100%;
-  height: 100vh;
-  min-height: 680px;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
-  background: #f7f8fc;
-
+  background: #f5f7fb;
   color: #14213d;
-
-  overflow: hidden;
 }
 
 
-/* =========================================
+/* =========================================================
    MAIN
-========================================= */
+========================================================= */
 
 .kwizdom-main {
-  flex: 1;
-  min-height: 0;
-
   width: 100%;
+  flex: 1;
 
-  padding: 18px 0;
+  padding: clamp(16px, 2.5vw, 32px) 0;
 }
 
 
-/* =========================================
+/* =========================================================
    MAIN CARD
-========================================= */
+========================================================= */
 
 .kwizdom-content {
-  width: min(1320px, 92%);
-  height: 100%;
+  width: min(1320px, calc(100% - 40px));
 
   margin: 0 auto;
 
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  overflow: hidden;
-
-  border-radius: 22px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
   background: #ffffff;
 
-  border: 1px solid #e9edf4;
+  border: 1px solid #e6ebf2;
+  border-radius: 24px;
+
+  overflow: hidden;
 
   box-shadow:
-    0 15px 45px rgba(31, 50, 86, 0.10);
+    0 18px 50px rgba(25, 50, 90, 0.10);
 }
 
 
-/* =========================================
+/* =========================================================
    LEFT RESULT PANEL
-========================================= */
+========================================================= */
 
 .result-panel {
   min-width: 0;
 
-  padding: 28px 42px;
+  padding: clamp(24px, 3vw, 44px);
+
+  background: #ffffff;
 
   display: flex;
   flex-direction: column;
-
-  background: #ffffff;
 }
 
 
-/* =========================================
+/* =========================================================
    EVENT BANNER
-========================================= */
+========================================================= */
 
 .event-banner {
   width: min(100%, 550px);
 
   margin: 0 auto;
 
-  border-radius: 14px;
-
   overflow: hidden;
+
+  border-radius: 14px;
 
   background: #ffffff;
 
   box-shadow:
-    0 8px 25px rgba(20, 35, 65, 0.10);
+    0 8px 25px rgba(25, 45, 80, 0.10);
 }
 
 .event-banner img {
@@ -109,69 +121,65 @@
 }
 
 
-/* =========================================
+/* =========================================================
    HEADING
-========================================= */
+========================================================= */
 
 .result-heading {
   width: min(100%, 550px);
 
-  margin: 17px auto 0;
+  margin: 22px auto 0;
 }
 
 .result-heading span {
   display: block;
 
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 
   color: #ef8b17;
 
   font-size: 11px;
-
   font-weight: 900;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.7px;
 }
 
 .result-heading h1 {
   margin: 0;
 
-  color: #243b7a;
+  color: #243f80;
 
-  font-size: 30px;
-
-  line-height: 1.1;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.05;
 
   font-weight: 900;
 
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
 .result-heading p {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
 
-  color: #65738b;
+  color: #6d7b90;
 
-  font-size: 14px;
-
-  line-height: 1.4;
+  font-size: clamp(12px, 1.2vw, 14px);
+  line-height: 1.5;
 }
 
 
-/* =========================================
+/* =========================================================
    FORM
-========================================= */
+========================================================= */
 
 .result-form {
   width: min(100%, 550px);
 
-  margin: 16px auto 0;
+  margin: 22px auto 0;
 
   display: flex;
-
   flex-direction: column;
 
-  gap: 11px;
+  gap: 15px;
 }
 
 .form-group {
@@ -181,39 +189,39 @@
 .form-group label {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 
   color: #17294b;
 
   font-size: 13px;
-
   font-weight: 800;
 }
 
 
-/* =========================================
+/* =========================================================
    INPUTS
-========================================= */
+========================================================= */
 
 .form-group input,
 .combo-input {
+  display: block;
+
   width: 100%;
+  height: 48px;
 
-  height: 44px;
+  padding: 0 14px;
 
-  padding: 0 13px;
-
-  border: 1px solid #d7deea;
-
+  border: 1px solid #d5ddea;
   border-radius: 9px;
 
-  background: #f8fafc;
+  outline: none;
+
+  background: #f9fafc;
 
   color: #182640;
 
-  font-size: 13px;
-
-  outline: none;
+  font-family: inherit;
+  font-size: 14px;
 
   transition:
     border-color 0.2s ease,
@@ -221,25 +229,30 @@
     background 0.2s ease;
 }
 
+.form-group input:hover,
+.combo-input:hover {
+  border-color: #bcc8da;
+}
+
 .form-group input:focus,
 .combo-input:focus {
   background: #ffffff;
 
-  border-color: #526bdc;
+  border-color: #4966ad;
 
   box-shadow:
-    0 0 0 3px rgba(82, 107, 220, 0.10);
+    0 0 0 3px rgba(73, 102, 173, 0.10);
 }
 
 .form-group input::placeholder,
 .combo-input::placeholder {
-  color: #8a96a9;
+  color: #929dad;
 }
 
 
-/* =========================================
-   COMBOBOX
-========================================= */
+/* =========================================================
+   SCHOOL COMBOBOX
+========================================================= */
 
 .combobox-wrapper {
   position: relative;
@@ -250,31 +263,29 @@
 .combo {
   position: absolute;
 
-  top: calc(100% + 5px);
-
+  top: calc(100% + 6px);
   left: 0;
   right: 0;
 
-  max-height: 150px;
+  width: 100%;
+  max-height: 180px;
+
+  margin: 0;
+  padding: 5px;
 
   overflow-y: auto;
 
-  margin: 0;
-
-  padding: 5px;
-
-  list-style: none;
-
   background: #ffffff;
 
-  border: 1px solid #dfe4ec;
-
+  border: 1px solid #dce3ed;
   border-radius: 9px;
 
   box-shadow:
-    0 12px 25px rgba(20, 34, 60, 0.14);
+    0 12px 28px rgba(20, 35, 65, 0.15);
 
-  z-index: 100;
+  list-style: none;
+
+  z-index: 1000;
 }
 
 .option {
@@ -283,105 +294,105 @@
 
 .option-active,
 .option-normal {
-  padding: 8px 10px;
+  width: 100%;
+
+  padding: 10px 11px;
 
   border-radius: 6px;
 
   font-size: 13px;
 
+  line-height: 1.4;
+
   cursor: pointer;
 }
 
 .option-active {
-  background: #526bdc;
-
+  background: #29488e;
   color: #ffffff;
 }
 
 .option-normal {
-  color: #263654;
+  color: #273752;
 }
 
 .option-normal:hover {
-  background: #f1f4fa;
+  background: #f0f4fa;
 }
 
 .no-school {
-  padding: 10px;
+  padding: 11px;
 
-  color: #69758a;
+  color: #737f91;
 
   font-size: 12px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.result-note {
+  color: #7a8698;
+
+  font-size: 10px;
+  font-style: italic;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.result-error {
+  padding: 9px 12px;
+
+  border: 1px solid #ffd0d0;
+  border-radius: 7px;
+
+  background: #fff2f2;
+
+  color: #d62828;
+
+  font-size: 12px;
+  font-weight: 600;
 
   line-height: 1.4;
 }
 
 
-/* =========================================
-   NOTE
-========================================= */
-
-.result-note {
-  color: #778398;
-
-  font-size: 10px;
-
-  font-style: italic;
-
-  line-height: 1.35;
-}
-
-
-/* =========================================
-   ERROR
-========================================= */
-
-.result-error {
-  padding: 8px 11px;
-
-  border-radius: 7px;
-
-  background: #fff0f0;
-
-  border: 1px solid #ffcaca;
-
-  color: #d62828;
-
-  font-size: 12px;
-
-  font-weight: 600;
-}
-
-
-/* =========================================
+/* =========================================================
    RESULT BUTTON
-========================================= */
+========================================================= */
 
 .result-button {
-  width: fit-content;
+  width: 100%;
+  max-width: 210px;
 
-  min-width: 170px;
+  min-height: 46px;
 
-  margin: 2px auto 0;
-
-  padding: 11px 24px;
+  margin: 3px auto 0;
+  padding: 10px 20px;
 
   border: none;
-
-  border-radius: 11px;
+  border-radius: 9px;
 
   background: #29488e;
 
   color: #ffffff;
 
-  font-size: 14px;
-
+  font-family: inherit;
+  font-size: 13px;
   font-weight: 800;
 
   cursor: pointer;
 
   box-shadow:
-    0 7px 16px rgba(41, 72, 142, 0.22);
+    0 7px 18px rgba(41, 72, 142, 0.20);
 
   transition:
     transform 0.2s ease,
@@ -390,16 +401,20 @@
 }
 
 .result-button:hover {
-  background: #1f3975;
+  background: #203b79;
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 20px rgba(41, 72, 142, 0.28);
+    0 10px 22px rgba(41, 72, 142, 0.25);
+}
+
+.result-button:active {
+  transform: translateY(0);
 }
 
 .result-button:disabled {
-  opacity: 0.65;
+  opacity: 0.6;
 
   cursor: not-allowed;
 
@@ -407,9 +422,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    CANNOT FIND
-========================================= */
+========================================================= */
 
 .cannot-find {
   width: fit-content;
@@ -424,67 +439,68 @@
 
   color: #ffffff;
 
-  font-size: 12px;
-
+  font-size: 11px;
   font-weight: 800;
 
   text-decoration: none;
 
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .cannot-find:hover {
-  transform: translateY(-2px);
+  background: #cf151b;
+
+  transform: translateY(-1px);
 }
 
 
-/* =========================================
-   RIGHT VISUAL
-========================================= */
+/* =========================================================
+   RIGHT VISUAL PANEL
+========================================================= */
 
 .visual-panel {
   position: relative;
 
   min-width: 0;
+  min-height: 650px;
 
   overflow: hidden;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   background:
     linear-gradient(
       145deg,
       #ffffff 0%,
-      #f7f8ff 48%,
-      #eef5eb 100%
+      #f7f8ff 50%,
+      #eef6ed 100%
     );
 }
 
 
-/* TOP CIRCLE */
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
 
 .visual-panel::before {
   content: "";
 
   position: absolute;
 
-  width: 360px;
-  height: 360px;
+  width: clamp(240px, 28vw, 380px);
+  height: clamp(240px, 28vw, 380px);
 
-  top: -150px;
-  right: -100px;
+  top: -160px;
+  right: -110px;
 
   border-radius: 50%;
 
-  background: rgba(111, 114, 245, 0.08);
+  background: rgba(111, 114, 245, 0.07);
 }
-
-
-/* BOTTOM CIRCLE */
 
 .visual-panel::after {
   content: "";
@@ -494,18 +510,18 @@
   width: 260px;
   height: 260px;
 
-  bottom: -150px;
-  left: -100px;
+  bottom: -160px;
+  left: -120px;
 
   border-radius: 50%;
 
-  background: rgba(78, 171, 82, 0.08);
+  background: rgba(78, 171, 82, 0.07);
 }
 
 
-/* =========================================
+/* =========================================================
    VISUAL CONTENT
-========================================= */
+========================================================= */
 
 .visual-content {
   position: relative;
@@ -515,26 +531,24 @@
   width: 100%;
   height: 100%;
 
-  padding: 25px;
+  padding: 35px 25px;
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   text-align: center;
 }
 
 
-/* =========================================
+/* =========================================================
    BADGE
-========================================= */
+========================================================= */
 
 .visual-badge {
-  padding: 6px 14px;
+  padding: 7px 15px;
 
   border-radius: 30px;
 
@@ -543,64 +557,62 @@
   color: #ffffff;
 
   font-size: 11px;
-
   font-weight: 900;
 
-  letter-spacing: 0.7px;
+  letter-spacing: 0.8px;
 }
 
 
-/* =========================================
-   RIGHT HEADING
-========================================= */
+/* =========================================================
+   VISUAL HEADING
+========================================================= */
 
 .visual-content h2 {
-  margin: 13px 0 3px;
+  margin: 14px 0 4px;
 
   color: #263c7e;
 
-  font-size: clamp(42px, 4vw, 58px);
-
-  line-height: 0.92;
+  font-size: clamp(42px, 4.5vw, 64px);
+  line-height: 0.91;
 
   font-weight: 900;
 
-  letter-spacing: -2px;
+  letter-spacing: -2.5px;
 }
 
 .visual-content p {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
 
-  color: #526077;
+  color: #56647b;
 
-  font-size: 14px;
+  font-size: clamp(12px, 1.2vw, 15px);
 
   font-weight: 600;
 }
 
 
-/* =========================================
-   CHARACTER
-========================================= */
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .hero-character {
-  width: min(420px, 75%);
+  display: block;
+
+  width: min(430px, 82%);
 
   height: auto;
 
-  max-height: 380px;
+  max-height: 390px;
+
+  margin-top: 12px;
 
   object-fit: contain;
-
-  margin-top: 5px;
-
-  display: block;
 }
 
 
-/* =========================================
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
 
 .kwizdom-footer {
   width: 100%;
@@ -615,16 +627,17 @@
 }
 
 .footer-top {
-  width: min(1320px, 92%);
+  width: min(1320px, calc(100% - 40px));
 
-  height: 42px;
+  min-height: 48px;
 
-  margin: 0 auto;
+  margin: auto;
+
+  padding: 7px 0;
 
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 
   gap: 15px;
@@ -635,9 +648,9 @@
 
   align-items: center;
 
-  gap: 9px;
+  gap: 8px;
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .follow-text {
@@ -645,13 +658,11 @@
 }
 
 .footer-social a {
-  width: 21px;
-  height: 21px;
+  width: 22px;
+  height: 22px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   border-radius: 50%;
@@ -659,6 +670,8 @@
   color: #ffffff;
 
   text-decoration: none;
+
+  transition: background 0.2s ease;
 }
 
 .footer-social a:hover {
@@ -676,11 +689,13 @@
 }
 
 .footer-brand strong {
-  padding: 3px 7px;
+  padding: 4px 8px;
 
   border-radius: 3px;
 
   background: #ef8b17;
+
+  font-size: 10px;
 }
 
 .footer-brand span {
@@ -696,48 +711,103 @@
 }
 
 .app-links img {
-  width: 70px;
+  display: block;
 
+  width: 70px;
   height: 22px;
 
   object-fit: contain;
 }
 
 .footer-bottom {
-  min-height: 25px;
+  min-height: 26px;
 
-  padding: 5px 10px;
+  padding: 6px 12px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-  background: #f4f5f8;
+  background: #f3f5f8;
 
   color: #1d2740;
 
   font-size: 10px;
-
   font-weight: 600;
 
   text-align: center;
 }
 
 
-/* =========================================
-   LAPTOP / SMALL DESKTOP
-========================================= */
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (min-width: 1400px) {
 
-  .result-panel {
-    padding: 24px 28px;
+  .kwizdom-content {
+    max-width: 1380px;
   }
 
-  .event-banner {
-    width: min(100%, 500px);
+  .result-panel {
+    padding: 42px 55px;
+  }
+
+  .visual-panel {
+    min-height: 700px;
+  }
+
+  .hero-character {
+    width: min(470px, 78%);
+    max-height: 430px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+   1000px - 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .kwizdom-content {
+    width: calc(100% - 32px);
+  }
+
+  .result-panel {
+    padding: 28px;
+  }
+
+  .visual-panel {
+    min-height: 600px;
+  }
+
+  .hero-character {
+    width: 80%;
+    max-height: 340px;
+  }
+}
+
+
+/* =========================================================
+   SMALL LAPTOP / LARGE TABLET
+   851px - 999px
+========================================================= */
+
+@media (max-width: 999px) {
+
+  .kwizdom-content {
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  .result-panel {
+    padding: 25px;
+  }
+
+  .visual-panel {
+    min-height: 560px;
   }
 
   .visual-content h2 {
@@ -745,34 +815,25 @@
   }
 
   .hero-character {
-    width: 75%;
-    max-height: 330px;
+    width: 85%;
+    max-height: 300px;
   }
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+   601px - 850px
+========================================================= */
 
 @media (max-width: 850px) {
 
-  .kwizdom-page {
-    height: auto;
-    min-height: 100vh;
-
-    overflow-y: auto;
-  }
-
   .kwizdom-main {
-    flex: none;
-
     padding: 18px 0 25px;
   }
 
   .kwizdom-content {
-    width: 94%;
-    height: auto;
+    width: calc(100% - 28px);
 
     grid-template-columns: 1fr;
 
@@ -780,39 +841,47 @@
   }
 
   .result-panel {
-    padding: 25px 20px 28px;
+    padding: 28px 24px 32px;
+  }
+
+  .event-banner,
+  .result-heading,
+  .result-form {
+    width: min(100%, 600px);
   }
 
   .visual-panel {
-    min-height: 470px;
+    min-height: 500px;
   }
 
   .visual-content {
-    min-height: 470px;
+    min-height: 500px;
+
+    padding: 30px 20px;
   }
 
   .hero-character {
-    width: min(400px, 70%);
-    max-height: 320px;
+    width: min(400px, 65%);
+
+    max-height: 330px;
   }
 
   .footer-top {
-    height: auto;
-
-    min-height: 55px;
-
-    padding: 9px 0;
-
     flex-wrap: wrap;
 
     justify-content: center;
+
+    min-height: auto;
+
+    padding: 10px 0;
   }
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+   481px - 600px
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -821,76 +890,118 @@
   }
 
   .kwizdom-content {
-    width: 94%;
+    width: calc(100% - 20px);
 
-    border-radius: 16px;
+    border-radius: 15px;
   }
 
   .result-panel {
-    padding: 18px 15px 22px;
+    padding: 18px 15px 24px;
   }
 
   .event-banner {
-    width: 100%;
-
-    border-radius: 11px;
+    border-radius: 10px;
   }
 
   .result-heading {
-    margin-top: 16px;
+    margin-top: 18px;
+  }
+
+  .result-heading span {
+    font-size: 9px;
+    letter-spacing: 1.4px;
   }
 
   .result-heading h1 {
-    font-size: 26px;
+    font-size: 28px;
+
+    letter-spacing: -0.8px;
   }
 
   .result-heading p {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .result-form {
-    margin-top: 16px;
+    margin-top: 18px;
 
-    gap: 12px;
+    gap: 14px;
+  }
+
+  .form-group label {
+    font-size: 12px;
   }
 
   .form-group input,
   .combo-input {
-    height: 45px;
+    height: 46px;
+
+    font-size: 13px;
+  }
+
+  .result-note {
+    font-size: 9px;
   }
 
   .result-button {
     width: 100%;
+    max-width: none;
 
-    min-width: 0;
+    min-height: 46px;
   }
 
+  .cannot-find {
+    font-size: 10px;
+  }
+
+
+  /* RIGHT SIDE */
+
   .visual-panel {
-    min-height: 430px;
+    min-height: 440px;
   }
 
   .visual-content {
-    min-height: 430px;
+    min-height: 440px;
 
-    padding: 20px;
+    padding: 25px 15px;
+  }
+
+  .visual-badge {
+    padding: 6px 13px;
+
+    font-size: 9px;
   }
 
   .visual-content h2 {
+    margin-top: 12px;
+
     font-size: 42px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .visual-content p {
+    font-size: 11px;
   }
 
   .hero-character {
     width: 82%;
 
-    max-height: 300px;
+    max-height: 285px;
+
+    margin-top: 8px;
   }
+
+
+  /* FOOTER */
 
   .footer-top {
     flex-direction: column;
 
-    gap: 7px;
+    gap: 9px;
 
-    padding: 12px 0;
+    padding: 12px 10px;
   }
 
   .footer-brand {
@@ -902,19 +1013,102 @@
   }
 
   .footer-bottom {
-    font-size: 9px;
+    padding: 7px 10px;
+
+    font-size: 8px;
+
+    line-height: 1.4;
   }
 }
 
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* =========================================================
+   SMALL PHONES
+   376px - 480px
+========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
+
+  .kwizdom-content {
+    width: calc(100% - 16px);
+  }
 
   .result-panel {
-    padding: 15px 12px 20px;
+    padding: 16px 13px 22px;
+  }
+
+  .result-heading h1 {
+    font-size: 25px;
+  }
+
+  .result-heading p {
+    font-size: 11px;
+  }
+
+  .form-group input,
+  .combo-input {
+    height: 45px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+  }
+
+  .result-form {
+    gap: 13px;
+  }
+
+  .visual-panel {
+    min-height: 400px;
+  }
+
+  .visual-content {
+    min-height: 400px;
+  }
+
+  .visual-content h2 {
+    font-size: 38px;
+  }
+
+  .hero-character {
+    width: 86%;
+
+    max-height: 260px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   320px - 375px
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .kwizdom-main {
+    padding: 8px 0 14px;
+  }
+
+  .kwizdom-content {
+    width: calc(100% - 12px);
+
+    border-radius: 12px;
+  }
+
+  .result-panel {
+    padding: 14px 11px 20px;
+  }
+
+  .event-banner {
+    border-radius: 8px;
+  }
+
+  .result-heading {
+    margin-top: 15px;
+  }
+
+  .result-heading span {
+    font-size: 8px;
   }
 
   .result-heading h1 {
@@ -922,24 +1116,176 @@
   }
 
   .result-heading p {
+    font-size: 10px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .form-group input,
+  .combo-input {
+    height: 43px;
+
+    font-size: 11px;
+  }
+
+  .result-note {
+    font-size: 8px;
+  }
+
+  .result-button {
+    min-height: 44px;
+
     font-size: 12px;
   }
 
+  .cannot-find {
+    font-size: 9px;
+  }
+
   .visual-panel {
-    min-height: 380px;
+    min-height: 370px;
   }
 
   .visual-content {
-    min-height: 380px;
+    min-height: 370px;
+
+    padding: 20px 10px;
+  }
+
+  .visual-badge {
+    font-size: 8px;
   }
 
   .visual-content h2 {
-    font-size: 36px;
+    font-size: 34px;
+  }
+
+  .visual-content p {
+    font-size: 10px;
   }
 
   .hero-character {
-    width: 88%;
+    width: 90%;
 
-    max-height: 260px;
+    max-height: 235px;
+  }
+
+  .footer-social {
+    gap: 6px;
+  }
+
+  .footer-brand span {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   EXTREMELY SMALL PHONES
+   <= 319px
+========================================================= */
+
+@media (max-width: 319px) {
+
+  .result-panel {
+    padding: 12px 9px 18px;
+  }
+
+  .result-heading h1 {
+    font-size: 21px;
+  }
+
+  .result-heading p {
+    font-size: 9px;
+  }
+
+  .form-group input,
+  .combo-input {
+    height: 41px;
+
+    font-size: 10px;
+  }
+
+  .visual-panel {
+    min-height: 330px;
+  }
+
+  .visual-content {
+    min-height: 330px;
+  }
+
+  .visual-content h2 {
+    font-size: 29px;
+  }
+
+  .hero-character {
+    width: 94%;
+
+    max-height: 205px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+========================================================= */
+
+@media (max-height: 600px) and (orientation: landscape) {
+
+  .kwizdom-main {
+    padding: 12px 0;
+  }
+
+  .kwizdom-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .result-panel {
+    padding: 18px 24px;
+  }
+
+  .event-banner {
+    width: min(100%, 400px);
+  }
+
+  .result-heading {
+    margin-top: 12px;
+  }
+
+  .result-heading h1 {
+    font-size: 25px;
+  }
+
+  .result-heading p {
+    font-size: 11px;
+  }
+
+  .result-form {
+    margin-top: 12px;
+
+    gap: 9px;
+  }
+
+  .form-group input,
+  .combo-input {
+    height: 40px;
+  }
+
+  .visual-panel {
+    min-height: 500px;
+  }
+
+  .visual-content h2 {
+    font-size: 38px;
+  }
+
+  .hero-character {
+    max-height: 240px;
+  }
+
+  .kwizdom-footer {
+    display: none;
   }
 }
