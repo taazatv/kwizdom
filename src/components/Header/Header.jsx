@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const tickerItems = [
-    "TAAZA TV",
-    "PRESENTS",
-    "KWIZDOM 4.0",
-    "THE ULTIMATE QUIZ COMPETITION",
-    "RESULTS PUBLISHED FOR:",
+    "TAAZA TV PRESENTS KWIZDOM 4.0 THE ULTIMATE QUIZ COMPETITION, RESULTS PUBLISHED FOR: ",
     "Aditya Academy Barasat",
     "DPS NEWTOWN",
 "GD Birla Center For Education",
