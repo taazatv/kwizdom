@@ -367,5 +367,5 @@ const Certificate = () => {
     </main>
   );
 };
-
+//SAMPLEs
 export default Certificate;
