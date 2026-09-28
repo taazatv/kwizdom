@@ -185,7 +185,10 @@
 
   white-space: nowrap;
 
-  animation: kwizdomTickerMove 28s linear infinite;
+  /* Slowed down from 28s to 65s */
+  animation: kwizdomTickerMove 65s linear infinite;
+
+  will-change: transform;
 }
 
 
@@ -262,6 +265,12 @@
   }
 
 
+  .kwizdom-ticker-track {
+    /* Slower on tablet */
+    animation-duration: 65s;
+  }
+
+
   .kwizdom-ticker-track span {
     font-size: 11px;
 
@@ -317,7 +326,8 @@
 
 
   .kwizdom-ticker-track {
-    animation-duration: 24s;
+    /* Slowed down from 24s to 60s */
+    animation-duration: 60s;
   }
 
 
@@ -360,6 +370,12 @@
 
   .kwizdom-ticker {
     height: 25px;
+  }
+
+
+  .kwizdom-ticker-track {
+    /* Keep ticker slow on very small screens */
+    animation-duration: 60s;
   }
 
 
