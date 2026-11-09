@@ -376,7 +376,7 @@ const SearchResult = () => {
       </main>
 
 
-      {/* ================= FOOTER ================= */}
+      {/* ================= FOOTER ===================== */}
 
       <footer className="kwizdom-footer">
 

@@ -120,7 +120,7 @@ const Forgot = () => {
   const navigate = useNavigate();
 
   /* =========================================
-     FETCH STUDENTS
+     FETCH STUDENTS ------
   ========================================= */
 
   useEffect(() => {
